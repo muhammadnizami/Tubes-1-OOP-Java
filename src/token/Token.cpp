@@ -73,7 +73,10 @@ bool Token::isBilangan() const{
 
 //method lain
 Token Token::Operasikan(const Token& lhs, const Token& rhs) const{
-	assert(isOprBiner() && lhs.isBilangan()&& rhs.isBilangan());	//belum sempat dipasang exception
+	if (!isOprBiner())
+		throw TokenException("INVALID OPERATOR");
+	if (!lhs.isBilangan()||!rhs.isBilangan())
+		throw TokenException("INVALID OPERAND");
 	Token retval=lhs;
 	switch(getTkn()){
 	case Kali:
@@ -110,7 +113,10 @@ Token Token::Operasikan(const Token& lhs, const Token& rhs) const{
 #include <cmath>
 
 Token Token::Operasikan(const Token& rhs) const{
-	assert(isOprUner() && rhs.isBilangan());
+	if (!isOprUner())
+		throw TokenException("INVALID OPERATOR");
+	if (!rhs.isBilangan())
+		throw TokenException("INVALID OPERAND");
 
 	Token retval=rhs;
 	switch(getTkn()){
