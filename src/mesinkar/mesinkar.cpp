@@ -5,13 +5,15 @@ TANGGAL  : 5 Maret 2014
 */
 #include "mesinkar.h"
 #include <string>
-#include <iostream>
+#include <assert.h>
 
 mesinkar::mesinkar(){
+	std::string L = "default";
+	std::string& LT=L;
 	SetIdxChar(0);
 	SetCC('#');
 	SetEnd(false);
-	SetPitaKarakter("default");
+	SetPitaKarakter(LT);
 }
 mesinkar::~mesinkar(){
 }
@@ -35,8 +37,10 @@ void mesinkar::SetCC(char CT){
 void mesinkar::SetEnd(bool ET){
    	End=ET;
 }
-void mesinkar::SetPitaKarakter(std::string ST){
-	PitaKarakter=ST;
+void mesinkar::SetPitaKarakter(std::string& ST){
+	assert(!ST.empty());
+	std::string STemp=ST;
+	PitaKarakter=STemp;
 }
 void mesinkar::SetIdxChar(int i){
 	idxChar=i;
@@ -48,12 +52,11 @@ void mesinkar::START(){
 	SetEnd(false);
 }
 void mesinkar::ADV(){
-	std::cout <<GetCC();
 	int temp = GetIdxChar();
 	temp++;
 	SetIdxChar(temp);
 	SetCC(GetPitaKarakter().at(GetIdxChar()));
 }
 bool mesinkar::EOP(){
-
+	return (GetEnd()==true);
 }

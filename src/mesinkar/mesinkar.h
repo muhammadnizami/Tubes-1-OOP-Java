@@ -16,7 +16,7 @@ class mesinkar{
    //Setter
    void SetCC(char CT);
    void SetEnd(bool ET);
-   void SetPitaKarakter(std::string ST);
+   void SetPitaKarakter(std::string& ST);
    void SetIdxChar(int i);
    //Fungsi
    void START();
