@@ -20,6 +20,8 @@ std::string Romawi::toString (const Token& T){	//mengembalikan representasi stri
 
 	if (T.getTipeBilangan()==_int){
 		return toString(T.getBilanganInt());
+	}else if (T.getTipeBilangan()==_bool){
+		return toString((int)T.getBilanganBool());
 	}else{
 		assert(T.getTipeBilangan()==_float);
 		return toString(T.getBilanganFloat());
