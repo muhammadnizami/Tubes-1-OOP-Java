@@ -52,10 +52,16 @@ void mesinkar::START(){
 	SetEnd(false);
 }
 void mesinkar::ADV(){
+	assert(!EOP());
 	int temp = GetIdxChar();
 	temp++;
 	SetIdxChar(temp);
-	SetCC(GetPitaKarakter().at(GetIdxChar()));
+	if(temp<GetPitaKarakter().length())
+		SetCC(GetPitaKarakter().at(GetIdxChar()));
+	else{
+		SetCC('\0');
+		SetEnd(true);
+	}
 }
 bool mesinkar::EOP(){
 	return (GetEnd()==true);
