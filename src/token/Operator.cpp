@@ -36,7 +36,7 @@ void Operator::SetString(TipeToken _tkn, const std::string& s){
 	//I.S.:	0<= (int) _tkn <TIPETOKEN_COUNT
 	//	s tidak dapat dikonversi oleh Arab, Romawi, maupun Logika
 	assert(_tkn>=0 && _tkn<TIPETOKEN_COUNT);
-	assert(StrRepComplies(s));
+	assert(StrRepComplies(s)); //nanti diganti jadi exception
 
 	Opr[_tkn]=s;
 }
