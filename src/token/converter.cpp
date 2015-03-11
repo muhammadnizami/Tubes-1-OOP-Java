@@ -38,7 +38,7 @@ Converter& Converter::operator=(const Converter& C){
 		_Operand = &L;
 	else  	if (C._Operand == &(C.R))
 		_Operand = &R;
-	
+	return *this;
 }
 
 std::string Converter::toString(const Token& T){
