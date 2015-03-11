@@ -8,6 +8,10 @@ Converter::Converter(){//defaultnya apa saja
 }
 
 Converter::Converter(const Converter& C){
+	O=C.O;
+	A=C.A;
+	R=C.R;
+	L=C.L;
 	_Operator = &O;
 	if (C._Operand == &(C.A))
 		_Operand = &A;
@@ -20,6 +24,21 @@ Converter::Converter(const Converter& C){
 Converter::~Converter(){//cleanup
 	_Operator = NULL;
 	_Operand = NULL;
+}
+
+Converter& Converter::operator=(const Converter& C){
+	O=C.O;
+	A=C.A;
+	R=C.R;
+	L=C.L;
+	_Operator = &O;
+	if (C._Operand == &(C.A))
+		_Operand = &A;
+	else 	if (C._Operand == &(C.L))
+		_Operand = &L;
+	else  	if (C._Operand == &(C.R))
+		_Operand = &R;
+	
 }
 
 std::string Converter::toString(const Token& T){

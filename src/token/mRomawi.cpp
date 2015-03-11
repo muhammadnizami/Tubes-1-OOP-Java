@@ -33,14 +33,15 @@ int main(){
 	cout<<a->toString(a->toToken("MXVII"))<<endl;
 	cout<<a->toString(a->toToken("MXXXI"))<<endl;
 	cout<<a->toString(a->toToken("CDXLIVS"))<<endl;
-	cout<<a->toString(a->toToken("CDXLIVS*"))<<endl;
-	cout<<a->toString(a->toToken("CDXLIVS**"))<<endl;
-	cout<<a->toString(a->toToken("CDXLIVS***"))<<endl;
-	cout<<a->toString(a->toToken("CDXLIVS****"))<<endl;
-	cout<<a->toString(a->toToken("CDXLIVS*****"))<<endl;
-	cout<<a->toString(a->toToken("CDXLIVS******"))<<endl;
-	cout<<a->toString(a->toToken("IIIII*****"))<<endl;
+	cout<<a->toString(a->toToken("CDXLIVS•"))<<endl;
+	cout<<a->toString(a->toToken("CDXLIVS••"))<<endl;
+	cout<<a->toString(a->toToken("CDXLIVS•••"))<<endl;
+	cout<<a->toString(a->toToken("CDXLIVS••••"))<<endl;
+	cout<<a->toString(a->toToken("CDXLIVS•••••"))<<endl;
+	cout<<a->toString(a->toToken("CDXLIVS••••••"))<<endl;
+	cout<<a->toString(a->toToken("IIIII•••••"))<<endl;
 
 	cout<<a->canConvert("IIV")<<endl;
-	cout<<a->canConvert("*********************d")<<endl;
+	cout<<a->canConvert("•••••••••••••••••••••d")<<endl;
+	cout<<a->canConvert("Lolol")<<endl;
 }

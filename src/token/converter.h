@@ -16,6 +16,7 @@ class Converter{
 	Converter();
 	Converter(const Converter& C);
 	~Converter();//cleanup
+	Converter& operator=(const Converter& C);
 	std::string toString(const Token&);
 	Token toToken(const std::string&);
 	enum TipeRepresentasiBilangan {_Arab, _Romawi, _Logika};
