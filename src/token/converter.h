@@ -13,7 +13,7 @@
 
 class Converter{
 	public:
-	Converter();
+	Converter();//default: operator default dan bilangan arab
 	Converter(const Converter& C);
 	~Converter();//cleanup
 	Converter& operator=(const Converter& C);
