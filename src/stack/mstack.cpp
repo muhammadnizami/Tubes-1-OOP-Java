@@ -7,20 +7,34 @@
 */
 
 #include "stack.h"
+#include <cassert>
+#include <iostream>
 
 using namespace std;
 
 int main(){
 
-    Stack<int> S;
-
-    cout << "Size = " << S.Size() << endl;
-    cout << "Top = " << S.Top() << endl;
-    S.Push(2);
-    cout << "Top = " << S.Top() << endl;
-    S.Push(3);
-    cout << "Top = " << S.Top() << endl;
-    cout << S.Pop() << endl;
-
+	Stack<int> S2;
+	assert(S2.Empty());
+	for (int i=0;i<1000;i++){
+		assert(S2.GetSize()==i);
+		S2.Push(i);
+	}
+	
+	Stack<int> S3 = S2;
+	
+	for(int i=999;i>=0;i--){
+		int a;
+		S2.Pop(&a);
+		assert(S2.GetSize()==i);
+		cout<<a<<" "<<i<<endl;
+		assert(a==i);
+		S3.Pop(&a);
+		assert(S3.GetSize()==i);
+		cout<<a<<" "<<i<<endl;
+		assert(a==i);
+	}
+	
+	
     return 0;
 }

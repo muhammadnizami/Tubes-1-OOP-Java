@@ -15,19 +15,39 @@ mesinkar::mesinkar(){
 	SetEnd(false);
 	SetPitaKarakter(LT);
 }
+mesinkar::mesinkar(const std::string& _pitakar):PitaKarakter(_pitakar){
+	SetIdxChar(0);
+	SetCC('#');
+	SetEnd(false);
+}
+mesinkar::mesinkar (const mesinkar& m){
+	CC = m.CC;
+	End = m.End;
+	std::string ST =m.PitaKarakter; 
+	PitaKarakter=ST;
+	idxChar=m.idxChar;
+}
+mesinkar& mesinkar::operator=(const mesinkar& m){
+	CC = m.CC;
+	End = m.End;
+	std::string ST =m.PitaKarakter; 
+	PitaKarakter=ST;
+	idxChar=m.idxChar;
+	return *this;
+}
 mesinkar::~mesinkar(){
 }
 //Getter
-char mesinkar::GetCC(){
+char mesinkar::GetCC() const{
    return CC;
 }
-bool mesinkar::GetEnd(){
+bool mesinkar::GetEnd() const{
    return End;
 }
-std::string mesinkar::GetPitaKarakter(){
+const std::string& mesinkar::GetPitaKarakter() const{
 	return PitaKarakter;
 }
-int mesinkar::GetIdxChar(){
+int mesinkar::GetIdxChar() const{
 	return idxChar;
 }
 //Setter
@@ -37,7 +57,7 @@ void mesinkar::SetCC(char CT){
 void mesinkar::SetEnd(bool ET){
    	End=ET;
 }
-void mesinkar::SetPitaKarakter(std::string& ST){
+void mesinkar::SetPitaKarakter(const std::string& ST){
 	assert(!ST.empty());
 	std::string STemp=ST;
 	PitaKarakter=STemp;
@@ -63,6 +83,6 @@ void mesinkar::ADV(){
 		SetEnd(true);
 	}
 }
-bool mesinkar::EOP(){
+bool mesinkar::EOP() const{
 	return (GetEnd()==true);
 }

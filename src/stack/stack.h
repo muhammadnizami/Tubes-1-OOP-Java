@@ -6,9 +6,10 @@
  * Tanggal      : 5 Maret 2015
 */
 
-#include <iostream>
-#include <cstdio>
+//#include <iostream>
+//#include <cstdio>
 
+using namespace std;
 
 #ifndef STACK_H
 #define STACK_H
@@ -22,18 +23,24 @@ class Stack{
     Stack();
     Stack(int newsize);
     
+    //cctor
+    Stack(const Stack &S);
+
     // Destruktor
     ~Stack();
+	
+	// assignment
+	Stack<T>& operator=(const Stack &S);
     
     //Getter
-    int Size();
-    int Top();
+    // mengembalikan banyaknya elemen yang disimpan di dalam stack
+    int GetSize();
     
     // Predikat
     int Full();
     int Empty();
     void Push(T elemen);
-    T Pop();
+    void Pop(T *elemen);
     
 	private:
     int size;
@@ -59,6 +66,30 @@ Stack<T>::Stack(int newsize){
     Tab = new T[size];
 };
 
+//cctor
+template <class T>
+Stack<T>::Stack(const Stack &S){
+    
+    size = S.size;
+    TOP = S.TOP;
+    Tab = new T[size];
+    for(int i = 0; i <= TOP ; i++){
+        Tab[i] = S.Tab[i];
+    }
+};
+
+template <class T>
+Stack<T>& Stack<T>::operator=(const Stack &S){
+	delete [] Tab;
+    size = S.size;
+    TOP = S.TOP;
+    Tab = new T[size];
+    for(int i = 0; i <= TOP ; i++){
+        Tab[i] = S.Tab[i];
+    }
+	return *this;
+};
+
 // Destruktor
 template <class T>
 Stack<T>::~Stack(){
@@ -68,19 +99,14 @@ Stack<T>::~Stack(){
 
 //Getter
 template <class T>
-int Stack<T>::Size(){
-    return size;
-};
-
-template <class T>
-int Stack<T>::Top(){
-    return TOP;
+int Stack<T>::GetSize(){
+    return TOP+1;
 };
 
 // Predikat
 template <class T>
 int Stack<T>::Full(){
-    return TOP == size;
+    return TOP+1 == size;
 };
 
 template <class T>
@@ -90,15 +116,31 @@ int Stack<T>::Empty(){
 
 template <class T>
 void Stack<T>::Push(T elemen){
+    if(Full()){
+//        cout << "Stack penuh\n";
+        Stack<T> St(size);
+        St.TOP = TOP;
+        for(int i =0 ; i <= TOP ;i++){
+            St.Tab[i] = Tab[i];
+        }
+        delete [] Tab;
+        size++;
+        Tab = new T[size];
+        for(int i =0 ; i<= TOP ;i++){
+            Tab[i] = St.Tab[i];
+        }
+    }
     TOP++;
     Tab[TOP] = elemen;
+    
 };
 
 template <class T>
-T Stack<T>::Pop(){
-    T tmp;
-    tmp=Tab[TOP];
-    TOP--;
-    return tmp;
+void Stack<T>::Pop(T *elemen){
+    if(Empty()){
+    } else {
+        *elemen=Tab[TOP];
+        TOP--;
+    }
 };
 #endif
