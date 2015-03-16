@@ -71,6 +71,7 @@ void Converter::SetMode(TipeRepresentasiBilangan TRB){
 	}
 }
 void Converter::SetStrOperator(const std::string& s, TipeToken tt){
+	if (!O.StrRepComplies(s)) throw ConverterException();
 	O.SetString(tt,s);
 }
 

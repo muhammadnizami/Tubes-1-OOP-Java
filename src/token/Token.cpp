@@ -70,6 +70,66 @@ bool Token::isOprBiner() const{
 bool Token::isBilangan() const{
 	return Tkn==Bilangan;
 }
+bool Token::isSmallerPrecedenceThan(const Token& T){
+	assert(isOprUner() || isOprBiner());
+	int this_rank;
+	int T_rank;
+	switch(getTkn()){
+		case Not:
+		this_rank=4;
+		break;
+
+		case Kali:
+		case Bagi:
+		case Mod:
+		case Div:
+		this_rank=3;
+		break;
+
+		case Tambah:
+		case Kurang:
+		this_rank=2;
+		break;
+
+		case And:
+		this_rank=1;
+		break;
+
+		case Or:
+		this_rank=0;
+
+		default:
+			this_rank=-999;
+	}
+	switch(T.getTkn()){
+		case Not:
+		T_rank=4;
+		break;
+
+		case Kali:
+		case Bagi:
+		case Mod:
+		case Div:
+		T_rank=3;
+		break;
+
+		case Tambah:
+		case Kurang:
+		T_rank=2;
+		break;
+
+		case And:
+		T_rank=1;
+		break;
+
+		case Or:
+		T_rank=0;
+
+		default:
+		T_rank=-999;
+	}
+	return this_rank<T_rank;
+}
 
 //method lain
 Token Token::Operasikan(const Token& lhs, const Token& rhs) const{

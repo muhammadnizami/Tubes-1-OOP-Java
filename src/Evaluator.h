@@ -7,12 +7,7 @@ using std::string;
 
 class Evaluator{
 public:
-	enum modeOpr{
-		prefix,
-		infix,
-		postfix
-	};
-
+	Evaluator(){/*default:*/ M = prefix; Status = depan;};
 	string DoCmd(string);
 
 	string Redo(int);
@@ -30,13 +25,33 @@ public:
 
 	string Save();
 
-	string Set();
+	string Set(string s);
+
+	void Quit();
 
 private:
+	enum modeOpr{
+		prefix,
+		infix,
+		postfix
+	};
+
 	modeOpr M;
 	Converter C;
 
-	enum {depan,_Set,SetModeOpr,SetStringOpr,SetModeBilangan} Status;
+	enum {depan,_Set,SetModeOpr,SetStringOpr,SetModeBilangan,
+			Set_Kali,
+			Set_Bagi,
+			Set_Tambah,
+			Set_Kurang,
+			Set_Div,
+			Set_Mod,
+			Set_Kurungbuka,
+			Set_Kurungtutup,
+			Set_And,
+			Set_Or,
+			Set_Not,}
+		Status;
 
 
 };

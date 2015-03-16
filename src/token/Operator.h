@@ -11,6 +11,8 @@
 class Operator: public StrToken{
 	public:
 	Operator();
+	
+	bool StrRepComplies(const std::string& s);
 	void SetString(TipeToken _tkn, const std::string& s);
 		//I.S.:	0<= (int) _tkn <TIPETOKEN_COUNT
 		//	s tidak dapat dikonversi oleh Arab, Romawi, maupun Logika
@@ -24,7 +26,6 @@ class Operator: public StrToken{
 
 	private:
 	std::string Opr[TIPETOKEN_COUNT];
-	bool StrRepComplies(const std::string& s);
 };
 
 #endif

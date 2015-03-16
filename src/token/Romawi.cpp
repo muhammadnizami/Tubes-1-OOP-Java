@@ -31,7 +31,7 @@ std::string Romawi::toString (const Token& T){	//mengembalikan representasi stri
 std::string Romawi::toString (int num){
 	
 	std::string t;
-	if(num<0) t+= "-";
+	if(num<0) {t+= "-"; num = -num;}
 
 	std::string s[] = 
 		{"M","CM","D","CD","C","XC",
@@ -54,7 +54,7 @@ std::string Romawi::toString (float num){
 	//hanya kelipatan uncia (1/12), sisanya di-truncate
 
 	std::string t;
-	if(num<0) t+= "-";
+	if(num<0) {t+= "-"; num = -num;}
 	std::string s[] = 
 		{"M","CM","D","CD","C","XC",
 		"L","XL","X","IX","V","IV","I",

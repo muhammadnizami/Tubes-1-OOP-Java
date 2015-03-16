@@ -51,6 +51,9 @@ public:
 	bool isOprUner() const;
 	bool isOprBiner() const;
 	bool isBilangan() const;
+	bool isSmallerPrecedenceThan(const Token& T); 	//prekondisi: isOprUner() || isOprBiner()
+													//mengembalikan true bila this presedensnya kurang dari T
+													//presedensi standar
 	
 	//mengubah ke string 	(hanya akan digunakan untuk testing. Untuk penggunaan lebih lanjut,
 	//			gunakan kelas lain)
