@@ -176,7 +176,7 @@ string Evaluator::Set(string s){
 		return "Operator berhasil diganti";
 	}
 }
-
+#include <cstring>
 string Evaluator::ComputeExpr(string s){
 	try{
 		switch(M){
@@ -191,7 +191,7 @@ string Evaluator::ComputeExpr(string s){
 				break;
 		}
 	}catch(TokenException e){
-		if (e.what()=="CANNOT DIVIDE BY ZERO")
+		if (!strcmp(e.what(),"CANNOT DIVIDE BY ZERO"))
 			return string("MATH ERROR: ") + e.what();
 		else
 			return string("SYNTAX ERROR: ") + e.what();

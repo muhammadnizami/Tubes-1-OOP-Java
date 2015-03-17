@@ -405,7 +405,7 @@ void Token::Modkan (const Token& dengan){
 		}
 	}
 }
- 
+ #include <cstring>
 void Token::Andkan (const Token& dengan){
 	assert(isBilangan() && dengan.isBilangan());
 
@@ -416,9 +416,9 @@ void Token::Andkan (const Token& dengan){
 				if (getTipeBilangan()==_int)IntToBool();
 				if (tmp.getTipeBilangan()==_int)tmp.IntToBool();
 			}catch (TokenException e){
-				if (e.what()=="THIS TOKEN CANNOT BE CONVERTED TO BOOL"){
+				if (!strcmp(e.what(),"THIS TOKEN CANNOT BE CONVERTED TO BOOL")){
 					throw TokenException("INVALID OPERAND");
-				}
+				} else throw e;
 			}
 			Andkan(tmp);
 		}else{
@@ -440,9 +440,9 @@ void Token::Orkan (const Token& dengan){
 				if (getTipeBilangan()==_int)IntToBool();
 				if (tmp.getTipeBilangan()==_int)tmp.IntToBool();
 			}catch (TokenException e){
-				if (e.what()=="THIS TOKEN CANNOT BE CONVERTED TO BOOL"){
+				if (!strcmp(e.what(),"THIS TOKEN CANNOT BE CONVERTED TO BOOL")){
 					throw TokenException("INVALID OPERAND");
-				}
+				} else throw e;
 			}
 			Orkan(tmp);
 		}else{
