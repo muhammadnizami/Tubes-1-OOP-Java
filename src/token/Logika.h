@@ -15,9 +15,9 @@ metodanya adalah implementasi metoda StrToken
 */
 class Logika:public StrToken{
 	public:
-	virtual bool canConvert(const std::string& s); 	//menembalikan true bila s dapat dikonversi ke token
-	virtual std::string toString (const Token& T);	//mengembalikan representasi string dari token T
-	virtual Token toToken(const std::string& s);	//mengembalikan representasi token dari string s
+	virtual bool canConvert(const std::string& s); 	//!mengembalikan true bila s dapat dikonversi ke token
+	virtual std::string toString (const Token& T);	//!mengembalikan representasi string dari token T
+	virtual Token toToken(const std::string& s);	//!mengembalikan representasi token dari string s
 };
 
 #endif
