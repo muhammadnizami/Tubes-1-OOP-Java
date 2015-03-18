@@ -6,6 +6,7 @@
 using std::cout;
 using std::endl;
 
+/*! test Kelas Arab */
 int main(){
 	StrToken * a = new Arab();
 	cout<<a->toString(a->toToken("4000000000"))<<endl;
