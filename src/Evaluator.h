@@ -6,27 +6,32 @@
 
 using std::string;
 
+/* !
+kelas ini bertanggungjawab melaksanakan perintah, baik pengaturan, perhitungan, maupun penyimpanan.
+Kelas ini mengandung kelas Histori, File Manager, dan Converter. Dalam beberapa metodanya, kelas ini menggunakan mesintoken dan stack.
+Metoda utama yang diakses dari luar kelas adalah DoCmd yaitu melaksanakan sebuah string perintah. Di dalam kelas ini juga ada metoda pembantu untuk DoCmd di antaranya Set, EvaluateExpr, dan sebagainya.
+*/
 class Evaluator{
 public:
-	Evaluator(){/*default:*/ M = prefix; Status = depan;};
-	string DoCmd(string, bool addToHistory = true);
+	Evaluator(){/*!default:*/ M = prefix; Status = depan;};
+	string DoCmd(string, bool addToHistory = true); //!melakukan perintah
 
-	string Redo(int);
+	string Redo(int);//!mengulang n buah perintah
 
-	string MemAll();
+	string MemAll();//!menampilkan semua perintah
 
-	string Mem(int);
+	string Mem(int);//!menampilkan n buah perintah
 
-	string Undo(int);
+	string Undo(int);//!menghapus n buah perintah
 
-	string ComputeExpr(string);//menghitung ekspresi
-	string ComputeExprPrefix(string);
-	string ComputeExprInfix(string);
-	string ComputeExprPostfix(string);
+	string ComputeExpr(string);//!menghitung ekspresi, menggunakan mesin token dan stack
+	string ComputeExprPrefix(string);//!menghitung ekspresi prefix
+	string ComputeExprInfix(string);//!menghitung ekspresi infix
+	string ComputeExprPostfix(string);//!menghitung ekspresi postfix
 
-	string Save();
+	string Save();//!menyimpan histori
 
-	string Set(string s);
+	string Set(string s);//!melakukan setting
 
 	void Quit();
 
