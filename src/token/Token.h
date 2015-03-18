@@ -43,6 +43,7 @@ public:
 	//cctor dan operator= bitwise copy
 	
 	//!@name getter
+	//!tidak mengubah status token
 	//!@{
 	//!
 	//!mengembalikan tipe token tersebut
@@ -58,8 +59,9 @@ public:
 	//!@}
 	
 	//!@name setter
+	//!@mengubah status token. Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya
 	//!@{
-	//!
+	
 	//!mengeset token
 	void SetTkn(TipeToken _Tkn);
 	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f
@@ -70,8 +72,10 @@ public:
 	void SetBilangan(bool l);
 	//@}
 	
-	//!predikat@{
-	//!
+	//!name predikat
+	//!boolean, true false. tidak mengubah status token
+	//!@{
+	
 	//!mengembalikan true bila ( atau )
 	bool isPunctuator() const;
 	//!mengembalikan true bila ia operator uner
