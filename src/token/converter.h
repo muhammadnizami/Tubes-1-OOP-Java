@@ -11,17 +11,24 @@
 #include "Operator.h"
 #include "Romawi.h"
 
+/*!
+Responsibility
+Kelas ini bertugas mengkonversi seluruh kata yang valid menjadi token, baik operand maupun operator
+Hubungan dengan kelas lain
+Ia merupakan agregasi dari StrToken dan/atau Turunannya
+Gambaran umum method
+metodanya adalah toString dan toToken.*/
 class Converter{
 	public:
-	Converter();//default: operator default dan bilangan arab
+	Converter();//!default: operator default dan bilangan arab
 	Converter(const Converter& C);
 	~Converter();//cleanup
 	Converter& operator=(const Converter& C);
-	std::string toString(const Token&);
-	Token toToken(const std::string&);
+	std::string toString(const Token&); //!mengkonversi token ke string
+	Token toToken(const std::string&); //!mengkonversi string ke token. melempar exception bila gagal
 	enum TipeRepresentasiBilangan {_Arab, _Romawi, _Logika};
-	void SetMode(TipeRepresentasiBilangan);
-	void SetStrOperator(const std::string&, TipeToken);
+	void SetMode(TipeRepresentasiBilangan); //!mengeset apakah converter menggunakan bilangan _Arab, _Romawi, atau _Logika
+	void SetStrOperator(const std::string&, TipeToken); //!mengeset representasi operator
 
 	private:
 	StrToken * _Operator;
@@ -33,6 +40,9 @@ class Converter{
 
 };
 
+/*!
+kelas exception yang dilempar kelas converter
+*/
 class ConverterException:public std::exception{
 	public:
 	static const int msg_maxlength;
