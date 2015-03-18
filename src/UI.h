@@ -4,16 +4,19 @@
 #include <string>
 #include <iostream>
 
-//*placeholder
-//*kalau metode input dan output user diganti,
-//*kelas ini terlebih dahulu yang diganti
+//*placeholder\n
+//*kalau metode input dan output user diganti,\n
+//*kelas ini terlebih dahulu yang diganti\n
 class UI{ 	
 	public:
 
 	UI(std::istream& _in=std::cin,std::ostream& _out=std::cout):in(_in),out(_out){}
-
-	std::string GetNextCmd(){out<<"> ";std::string a; getline(in,a);return a;}//!mendapatkan perintah.
-	void Display(std::string dsp){out<<dsp<<std::endl;};//!menampilkan respon
+	
+	//!mendapatkan perintah.
+	std::string GetNextCmd(){out<<"> ";std::string a; getline(in,a);return a;}
+	
+	//!menampilkan respon
+	void Display(std::string dsp){out<<dsp<<std::endl;};
 
 	private:
 	std::istream& in;
