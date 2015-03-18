@@ -41,7 +41,13 @@ class Stack{
     int Full();
     int Empty();
     void Push(T elemen);
+    //! Memasukan elemen ke dalam stack
+    //! I.S Stack terdefinisi
+    //! F.S. jika penuh Stack akan diresize terlebih dahulu. elemen sudah dimasukan ke dalam stack
     void Pop(T *elemen);
+    //! Menghapus elemen di dalam stack
+    //! I.S Stack terdefinisi dan tidak kosong
+    //! F.S. elemen dihapus dari stack
     
     private:
    	int size;
