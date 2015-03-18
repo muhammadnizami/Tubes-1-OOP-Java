@@ -4,7 +4,8 @@
 #include <string>
 
 class mesinkar{
-   /*! Kelas mesinkar berguna untuk membaca string input satu per stau
+   /*! Kelas mesinkar berguna untuk membaca string input satu per satu
+   tidak ada ketergantungan kelas
    */
    public:
    mesinkar();
