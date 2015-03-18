@@ -1,4 +1,4 @@
-/*
+/*!
  * Nama         : Ignatius Alriana Haryadi Moel
  * NIM          : 13513051
  * Nama File    : stack.h
@@ -19,39 +19,39 @@ template <class T>
 class Stack{
 	public:
 	
-    // Konstruktor
+    //! Konstruktor
     Stack();
     Stack(int newsize);
     
-    //cctor
+    //!cctor
     Stack(const Stack &S);
 
     // Destruktor
     ~Stack();
 	
-	// assignment
-	Stack<T>& operator=(const Stack &S);
+   //! assignment
+   Stack<T>& operator=(const Stack &S);
     
-    //Getter
-    // mengembalikan banyaknya elemen yang disimpan di dalam stack
+    //!Getter
+    //! mengembalikan banyaknya elemen yang disimpan di dalam stack
     int GetSize();
     
-    // Predikat
+    //! Predikat
     int Full();
     int Empty();
     void Push(T elemen);
     void Pop(T *elemen);
     
-	private:
-    int size;
-    int TOP;
-    T *Tab;
+    private:
+   	int size;
+    	int TOP;
+    	T *Tab;
     
 };
 
-// Implementasi
+//! Implementasi
 
-// Konstruktor
+//! Konstruktor
 template <class T>
 Stack<T>::Stack(){
     TOP = -1;
@@ -66,7 +66,7 @@ Stack<T>::Stack(int newsize){
     Tab = new T[size];
 };
 
-//cctor
+//!cctor
 template <class T>
 Stack<T>::Stack(const Stack &S){
     
@@ -90,20 +90,20 @@ Stack<T>& Stack<T>::operator=(const Stack &S){
 	return *this;
 };
 
-// Destruktor
+// !Destruktor
 template <class T>
 Stack<T>::~Stack(){
     delete [] Tab;
     size = 0;
 };
 
-//Getter
+//!Getter
 template <class T>
 int Stack<T>::GetSize(){
     return TOP+1;
 };
 
-// Predikat
+//! Predikat
 template <class T>
 int Stack<T>::Full(){
     return TOP+1 == size;
