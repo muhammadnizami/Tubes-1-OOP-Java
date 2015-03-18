@@ -1,4 +1,4 @@
-/*
+/*!
  * Nama         : Ignatius Alriana Haryadi Moel
  * NIM          : 13513051
  * Nama File    : history.h
@@ -17,22 +17,22 @@ using namespace std;
 
 class History{
     public:
-        // ctor
+        //! ctor
 		History();
         History(string s, string r);
-        //cctor
+        //!cctor
         History(const History &H);
-        // dtor
+        //! dtor
         ~History();
 
-        //predikat
-        string GetAllBoth(); // mengeluarkan seluruh history
-        string GetAllCmd(); // mengeluarkan perintah yang pernah dieksekusi
-        string GetBoth(int n); // mengeluarkan n buah history terakhir
-        string GetCmd(int n); // mengeluarkan n buah perintah terakhir
+        //!predikat
+        string GetAllBoth(); //! mengeluarkan seluruh history
+        string GetAllCmd(); //! mengeluarkan perintah yang pernah dieksekusi
+        string GetBoth(int n); //! mengeluarkan n buah history terakhir
+        string GetCmd(int n); // !mengeluarkan n buah perintah terakhir
 
-	void Add(string cmd, string res = ""); //menambahkan perintah cmd dan hasil res
-	void Delete(int n); //menghapus n buah perintah terakhir
+	void Add(string cmd, string res = ""); //!menambahkan perintah cmd dan hasil res
+	void Delete(int n); //!menghapus n buah perintah terakhir
     
     private:
     Stack<string> MemCmd;
