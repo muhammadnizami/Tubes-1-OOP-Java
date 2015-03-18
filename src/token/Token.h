@@ -45,7 +45,7 @@ public:
 	//!@name getter
 	//!tidak mengubah status token
 	//!@{
-	//!
+	
 	//!mengembalikan tipe token tersebut
 	TipeToken getTkn() const; 
 	//!prekondisi: getTkn()==Bilangan
@@ -98,7 +98,6 @@ public:
 	//!untuk digunakan oleh kalkulator atau evaluator\n
 	//!saat dioperasikan, tipe bilangan dapat berubah\n
 	///@{
-		
 	
 	//!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()\n
 	//!mengembalikan <lhs> <this> <rhs>\n
