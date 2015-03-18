@@ -10,6 +10,7 @@ using std::endl;
 using std::string;
 using std::getline;
 
+//!tes kelas main
 int main(){
 	Evaluator E;
 	/*std::string cmd;
