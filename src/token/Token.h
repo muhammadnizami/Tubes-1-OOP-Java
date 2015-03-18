@@ -28,13 +28,13 @@ enum Tipe{
 	_int,_float,_bool,
 };
 
-class Token{
-public:
 	/*!
 		Kelas token bertanggung jawab sebagai objek yang dapat dimengerti oleh evaluator.
 		Kelas token bertanggung jawab atas jenis-jenis bilangan dan operator serta perilakunya
 		perilaku operator yaitu presedensi serta bagaimana operator tersebut mengoperasikan operand
 	*/
+class Token{
+public:
 
 	//!ctor
 	Token();
@@ -42,38 +42,66 @@ public:
 	//cctor, dtor dan operator= menggunakan default
 	//cctor dan operator= bitwise copy
 	
-	//!getter
-	TipeToken getTkn() const; //!mengembalikan tipe token tersebut
-	Tipe getTipeBilangan() const; //!prekondisi: getTkn()==Bilangan
-	int getBilanganInt() const; //!prekondisi: getTipeBilangan()==_int
-	float getBilanganFloat() const; //!prekondisi: getTipeBilangan()==_float
-	bool getBilanganBool() const; //!prekondisi: getTipeBilangan()==_bool
+	//!@name getter
+	//!@{
+	//!mengembalikan tipe token tersebut
+	TipeToken getTkn() const; 
+	//!prekondisi: getTkn()==Bilangan
+	Tipe getTipeBilangan() const; 
+	//!prekondisi: getTipeBilangan()==_int
+	int getBilanganInt() const; 
+	//!prekondisi: getTipeBilangan()==_float
+	float getBilanganFloat() const; 
+	//!prekondisi: getTipeBilangan()==_bool
+	bool getBilanganBool() const; 
+	//!@}
 	
-	//!setter
-	void SetTkn(TipeToken _Tkn);//!mengeset
-	void SetBilangan(float f);//!mengeset bilangan
-	void SetBilangan(int i);//!mengeset bilangan
-	void SetBilangan(bool l);//!mengeset bilangan
+	//!@name setter
+	//!@{
+	//!mengeset token
+	void SetTkn(TipeToken _Tkn);
+	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f
+	void SetBilangan(float f);
+	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi int dan isinya i
+	void SetBilangan(int i);
+	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi logika dan isinya l
+	void SetBilangan(bool l);
+	//@}
 	
-	//!predikat
-	bool isPunctuator() const;//!mengembalikan true bila ( atau )
-	bool isOprUner() const;//!mengembalikan true bila ia operator uner
-	bool isOprBiner() const;//!mengembalikan true bila ia operator uner
-	bool isBilangan() const;//!mengembalikan true bila token merupakan bilangan
-	bool isSmallerPrecedenceThan(const Token& T); 	//!prekondisi: isOprUner() || isOprBiner()
-							//!mengembalikan true bila this presedensnya kurang dari T
-							//!presedensi standar
+	//!predikat@{
+	//!mengembalikan true bila ( atau )
+	bool isPunctuator() const;
+	//!mengembalikan true bila ia operator uner
+	bool isOprUner() const;
+	//!mengembalikan true bila ia operator uner
+	bool isOprBiner() const;
+	//!mengembalikan true bila token merupakan bilangan
+	bool isBilangan() const;
+	//!prekondisi: isOprUner() || isOprBiner()
+	//!mengembalikan true bila this presedensnya kurang dari T
+	//!presedensi standar
+	bool isSmallerPrecedenceThan(const Token& T); 	
+	///@}
 	
 	//!mengubah ke string 	(hanya akan digunakan untuk testing. Untuk penggunaan lebih lanjut,
 	//!			gunakan kelas lain)
 	std::string ToStr();
 	
-	//!method lain, untuk digunakan oleh kalkulator atau evaluator
+	//!name method lain
+	//!untuk digunakan oleh kalkulator atau evaluator
 	//!saat dioperasikan, tipe bilangan dapat berubah
-	Token Operasikan(const Token& lhs, const Token& rhs) const; //!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()
-						//!mengembalikan <lhs> <this> <rhs>
-	Token Operasikan(const Token& rhs) const; 	//!prekondisi: isOprUner() && rhs.isBilangan()
-					//!mengembalikan <this> <rhs>
+	///@{
+		
+	
+	//!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()
+	//!mengembalikan <lhs> <this> <rhs>
+	Token Operasikan(const Token& lhs, const Token& rhs) const; 
+	
+	//!prekondisi: isOprUner() && rhs.isBilangan()
+	//!mengembalikan <this> <rhs>
+	Token Operasikan(const Token& rhs) const; 	
+	
+	///@}
 		
 private:
 	typedef union{
@@ -85,7 +113,7 @@ private:
 	BilanganT Val;
 	enum Tipe TipeBilangan;
 
-	//!method pembantu
+	//!method pembantu@{
 	void Kalikan (const Token& dengan); 
 	void Bagikan (const Token& dengan); 
 	void Tambahkan (const Token& dengan); 
@@ -95,6 +123,7 @@ private:
 	void Andkan (const Token& dengan); 
 	void Orkan (const Token& dengan); 
 	void Notkan ();
+	//!@}
 
 	//!method pembantu dari method pembantu
 	void IntToBool();
@@ -103,10 +132,10 @@ private:
 #include <cassert>
 #include <cstring>
 //exception
-class TokenException:public std::exception{
-	/*
+	/*!
 		exception yang dilempar kelas token
 	*/
+class TokenException:public std::exception{
 	public:
 	static const int msg_maxlength;
 	TokenException(){
