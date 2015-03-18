@@ -5,6 +5,7 @@
 using std::cout;
 using std::endl;
 
+/*! test kelas Operator*/
 int main(){
 	Operator* b = new Operator();
 
