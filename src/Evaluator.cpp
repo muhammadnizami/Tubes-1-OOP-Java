@@ -107,7 +107,7 @@ void Evaluator::Quit(){
 }
 
 string Evaluator::Set(string s){
-	//sebuah finite state machine
+	//!sebuah finite state machine untuk mengubah pengaturan
 	TipeToken tkn;
 	switch(Status){
 		case depan:
