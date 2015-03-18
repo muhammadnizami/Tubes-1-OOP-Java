@@ -7,32 +7,47 @@
 using std::string;
 
 /* !
-kelas ini bertanggungjawab melaksanakan perintah, baik pengaturan, perhitungan, maupun penyimpanan.
-Kelas ini mengandung kelas Histori, File Manager, dan Converter. Dalam beberapa metodanya, kelas ini menggunakan mesintoken dan stack.
-Metoda utama yang diakses dari luar kelas adalah DoCmd yaitu melaksanakan sebuah string perintah. Di dalam kelas ini juga ada metoda pembantu untuk DoCmd di antaranya Set, EvaluateExpr, dan sebagainya.
+kelas ini bertanggungjawab melaksanakan perintah, baik pengaturan, perhitungan, maupun penyimpanan.\n
+Kelas ini mengandung kelas Histori, File Manager, dan Converter. Dalam beberapa metodanya, kelas ini menggunakan mesintoken dan stack.\n
+Metoda utama yang diakses dari luar kelas adalah DoCmd yaitu melaksanakan sebuah string perintah. Di dalam kelas ini juga ada metoda pembantu untuk DoCmd di antaranya Set, EvaluateExpr, dan sebagainya.\n
 */
 class Evaluator{
 public:
-	Evaluator(){/*!default:*/ M = prefix; Status = depan;};
-	string DoCmd(string, bool addToHistory = true); //!melakukan perintah
+	Evaluator(){/*!ctor default:*/ M = prefix; Status = depan;};
+	
+	//!melakukan perintah
+	string DoCmd(string, bool addToHistory = true); 
+	
+	//!mengulang n buah perintah
+	string Redo(int);
+	
+	//!menampilkan semua perintah
+	string MemAll();
+	//!menampilkan n buah perintah
+	string Mem(int);
 
-	string Redo(int);//!mengulang n buah perintah
+	//!menghapus n buah perintah
+	string Undo(int);
 
-	string MemAll();//!menampilkan semua perintah
+	//!menghitung ekspresi, menggunakan mesin token dan stack
+	string ComputeExpr(string);
+	
+	//!menghitung ekspresi prefix
+	string ComputeExprPrefix(string);
+	
+	//!menghitung ekspresi infix
+	string ComputeExprInfix(string);
+	
+	//!menghitung ekspresi postfix
+	string ComputeExprPostfix(string);
 
-	string Mem(int);//!menampilkan n buah perintah
+	//!menyimpan histori
+	string Save();
 
-	string Undo(int);//!menghapus n buah perintah
+	//!melakukan setting
+	string Set(string s);
 
-	string ComputeExpr(string);//!menghitung ekspresi, menggunakan mesin token dan stack
-	string ComputeExprPrefix(string);//!menghitung ekspresi prefix
-	string ComputeExprInfix(string);//!menghitung ekspresi infix
-	string ComputeExprPostfix(string);//!menghitung ekspresi postfix
-
-	string Save();//!menyimpan histori
-
-	string Set(string s);//!melakukan setting
-
+	//!keluar
 	void Quit();
 
 private:
