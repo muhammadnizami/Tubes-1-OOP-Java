@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 
+//! test untuk kelas Token
 int main(){
 	srand(time(NULL));
 
