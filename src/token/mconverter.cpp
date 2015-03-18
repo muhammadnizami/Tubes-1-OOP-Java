@@ -5,6 +5,7 @@
 using std::cout;
 using std::endl;
 
+/*! test untuk kelas Converter */
 int main(){
 	Converter c;
 	Token T;
