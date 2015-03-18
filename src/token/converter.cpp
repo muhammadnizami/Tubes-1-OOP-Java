@@ -42,6 +42,8 @@ Converter& Converter::operator=(const Converter& C){
 }
 
 std::string Converter::toString(const Token& T){
+	
+	
 	if (T.isBilangan())
 		return _Operand->toString(T);
 	else
@@ -50,10 +52,26 @@ std::string Converter::toString(const Token& T){
 }
 
 Token Converter::toToken(const std::string& s){
+	//jika hendak dibuat representasi bilangan otomatis berubah: (perhatikan bahwa menu set harus diubah)
+	/*	
+	if (!_Operand->canConvert(s)){
+		if (A.canConvert(s))
+			SetMode(_Arab);
+		else if (R.canConvert(s))
+			SetMode(_Romawi);
+		else if (L.canConvert(s))
+			SetMode(_Logika);
+		//else do nothing
+	}
+	*/
+	//jika tidak, hapus kode di atas ini.
+
 	if (_Operator->canConvert(s))
 		return _Operator->toToken(s);
 	else if (_Operand->canConvert(s))
 		return _Operand->toToken(s);
+
+
 	else	throw ConverterException();
 }
 

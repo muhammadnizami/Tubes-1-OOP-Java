@@ -16,7 +16,7 @@ mesinkar::mesinkar(){
 	SetPitaKarakter(LT);
 }
 mesinkar::mesinkar(const std::string& _pitakar):PitaKarakter(_pitakar){
-	assert(!_pitakar.empty());
+	
 	SetIdxChar(0);
 	SetCC('#');
 	SetEnd(false);

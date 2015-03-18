@@ -22,6 +22,7 @@ string Evaluator::DoCmd(string s, bool addToHistory){
 
 	6. Set Muncul menu 
 	*/
+	if (s.empty()) return "";
 	mesinkata mk(s);
 	mk.START();
 	string retval;
