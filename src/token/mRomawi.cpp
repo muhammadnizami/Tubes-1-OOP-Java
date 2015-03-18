@@ -6,6 +6,7 @@
 using std::cout;
 using std::endl;
 
+//! test untuk kelas Romawi
 int main(){
 	StrToken * a = new Romawi();
 	Token t;
