@@ -3,15 +3,17 @@
 
 #include <string>
 #include <iostream>
-class UI{ 	//placeholder
-		//kalau metode input dan output user diganti,
-		//kelas ini dahulu yang diganti
+
+//*placeholder
+//*kalau metode input dan output user diganti,
+//*kelas ini terlebih dahulu yang diganti
+class UI{ 	
 	public:
 
 	UI(std::istream& _in=std::cin,std::ostream& _out=std::cout):in(_in),out(_out){}
 
-	std::string GetNextCmd(){out<<"> ";std::string a; getline(in,a);return a;}
-	void Display(std::string dsp){out<<dsp<<std::endl;};
+	std::string GetNextCmd(){out<<"> ";std::string a; getline(in,a);return a;}//!mendapatkan perintah.
+	void Display(std::string dsp){out<<dsp<<std::endl;};//!menampilkan respon
 
 	private:
 	std::istream& in;
