@@ -8,9 +8,15 @@
 //!kelas implementasi StrToken dengan aturan representasi bilangan romawi
 class Romawi:public StrToken{
 	public:
-	virtual bool canConvert(const std::string& s); 	//!menembalikan true bila s dapat dikonversi ke token
-	virtual std::string toString (const Token& T);	//!mengembalikan representasi string dari token T.
-	virtual Token toToken(const std::string& s);	//!mengembalikan representasi token dari string s
+	
+	//!mengembalikan true bila s dapat dikonversi ke token
+	virtual bool canConvert(const std::string& s); 	
+	
+	//!mengembalikan representasi string dari token T.
+	virtual std::string toString (const Token& T);	
+	
+	//!mengembalikan representasi token dari string s
+	virtual Token toToken(const std::string& s);	
 
 	private:
 	std::string toString (int num);
