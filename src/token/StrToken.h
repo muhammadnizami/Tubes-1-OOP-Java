@@ -5,12 +5,12 @@
 #include "Token.h"
 
 /*!
-Responsibility
-Kelas ini merupakan kelas abstrak. Tanggung jawabnya adalah mengkonversi satu jenis representasi token antara objek string dan token.
-Hubungan dengan kelas lain
-kelas ini diimplementasi oleh kelas Arab, Logika, Romawi, dan Operator.
-Gambaran umum method
-metodanya adalah mengkonversi dari string ke token dan mengkonversi dari token ke string, serta pengecekan apakah string tertentu dapat dikonversi olehnya
+Responsibility\n
+Kelas ini merupakan kelas abstrak. Tanggung jawabnya adalah mengkonversi satu jenis representasi token antara objek string dan token.\n
+Hubungan dengan kelas lain\n
+kelas ini diimplementasi oleh kelas Arab, Logika, Romawi, dan Operator.\n
+Gambaran umum method\n
+metodanya adalah mengkonversi dari string ke token dan mengkonversi dari token ke string, serta pengecekan apakah string tertentu dapat dikonversi olehnya\n
 */
 class StrToken{
 	public:
