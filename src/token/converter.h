@@ -20,15 +20,24 @@ Gambaran umum method
 metodanya adalah toString dan toToken.*/
 class Converter{
 	public:
-	Converter();//!default: operator default dan bilangan arab
+	//!cctor,ctor,dtor
+	//!@{
+	//!default: operator default dan bilangan arab
+	Converter();
 	Converter(const Converter& C);
 	~Converter();//cleanup
 	Converter& operator=(const Converter& C);
-	std::string toString(const Token&); //!mengkonversi token ke string
-	Token toToken(const std::string&); //!mengkonversi string ke token. melempar exception bila gagal
+	//!@}
+	
+	//!mengkonversi token ke string
+	std::string toString(const Token&); 
+	 //!mengkonversi string ke token. melempar exception bila gagal
+	Token toToken(const std::string&);
 	enum TipeRepresentasiBilangan {_Arab, _Romawi, _Logika};
-	void SetMode(TipeRepresentasiBilangan); //!mengeset apakah converter menggunakan bilangan _Arab, _Romawi, atau _Logika
-	void SetStrOperator(const std::string&, TipeToken); //!mengeset representasi operator
+	 //!mengeset apakah converter menggunakan bilangan _Arab, _Romawi, atau _Logika
+	void SetMode(TipeRepresentasiBilangan);
+	//!mengeset representasi operator
+	void SetStrOperator(const std::string&, TipeToken); 
 
 	private:
 	StrToken * _Operator;
