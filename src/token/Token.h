@@ -44,6 +44,7 @@ public:
 	
 	//!@name getter
 	//!@{
+	//!
 	//!mengembalikan tipe token tersebut
 	TipeToken getTkn() const; 
 	//!prekondisi: getTkn()==Bilangan
@@ -58,6 +59,7 @@ public:
 	
 	//!@name setter
 	//!@{
+	//!
 	//!mengeset token
 	void SetTkn(TipeToken _Tkn);
 	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f
@@ -69,6 +71,7 @@ public:
 	//@}
 	
 	//!predikat@{
+	//!
 	//!mengembalikan true bila ( atau )
 	bool isPunctuator() const;
 	//!mengembalikan true bila ia operator uner
@@ -77,9 +80,9 @@ public:
 	bool isOprBiner() const;
 	//!mengembalikan true bila token merupakan bilangan
 	bool isBilangan() const;
-	//!prekondisi: isOprUner() || isOprBiner()
-	//!mengembalikan true bila this presedensnya kurang dari T
-	//!presedensi standar
+	//!prekondisi: isOprUner() || isOprBiner()\n
+	//!mengembalikan true bila this presedensnya kurang dari T\n
+	//!presedensi standar\n
 	bool isSmallerPrecedenceThan(const Token& T); 	
 	///@}
 	
@@ -88,17 +91,17 @@ public:
 	std::string ToStr();
 	
 	//!name method lain
-	//!untuk digunakan oleh kalkulator atau evaluator
-	//!saat dioperasikan, tipe bilangan dapat berubah
+	//!untuk digunakan oleh kalkulator atau evaluator\n
+	//!saat dioperasikan, tipe bilangan dapat berubah\n
 	///@{
 		
 	
-	//!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()
-	//!mengembalikan <lhs> <this> <rhs>
+	//!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()\n
+	//!mengembalikan <lhs> <this> <rhs>\n
 	Token Operasikan(const Token& lhs, const Token& rhs) const; 
 	
-	//!prekondisi: isOprUner() && rhs.isBilangan()
-	//!mengembalikan <this> <rhs>
+	//!prekondisi: isOprUner() && rhs.isBilangan()\n
+	//!mengembalikan <this> <rhs>\n
 	Token Operasikan(const Token& rhs) const; 	
 	
 	///@}
