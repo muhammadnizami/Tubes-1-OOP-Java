@@ -8,6 +8,7 @@
 
 //#include <iostream>
 //#include <cstdio>
+#include <assert.h>
 
 using namespace std;
 
@@ -137,10 +138,6 @@ void Stack<T>::Push(T elemen){
 
 template <class T>
 void Stack<T>::Pop(T *elemen){
-    if(Empty()){
-    } else {
-        *elemen=Tab[TOP];
-        TOP--;
-    }
+    assert !Empty() *elemen=Tab[TOP];TOP--;
 };
 #endif
