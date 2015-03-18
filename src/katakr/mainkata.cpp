@@ -1,3 +1,4 @@
+/*!driver untuk mengetes class mesinkata*/
 #include <cassert>
 #include <iostream>
 #include "mesinkata.h"
