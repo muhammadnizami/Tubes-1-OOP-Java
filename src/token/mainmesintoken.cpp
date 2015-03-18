@@ -5,6 +5,7 @@
 using std::cout;
 using std::endl;
 
+//! test mesin token
 int main(){
 	std::string lalla = "* / + - div ( ) & | ~ 123";
 	Converter cvtTest;
