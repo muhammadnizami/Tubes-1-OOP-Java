@@ -6,6 +6,8 @@
  * Tanggal      : 5 Maret 2015
 */
 
+// Driver untuk mengetes Kelas Stackt
+
 #include "stack.h"
 #include <cassert>
 #include <iostream>
