@@ -4,7 +4,7 @@
 
 #include <string>
 
-//kelas mesin kata, cara menggunakan: konstruksi, set pita karakter, lalu for(start();!End();ADV())
+//!kelas mesin kata, cara menggunakan: konstruksi, set pita karakter, lalu for(start();!End();ADV())
 class mesinkata {
 public:
 	mesinkata();
@@ -21,8 +21,8 @@ public:
 	void SetEnd(bool End);
 	//Fungsi
 	void Ignore_Blank();
-	void START();
-	void ADV();	//maju satu kata. prekondisi: !End()
+	void START();	//!memulai pembacaan
+	void ADV();	//!maju satu kata. prekondisi: !End()
 	void SalinKata();
 private:
 	mesinkar mKar;	
