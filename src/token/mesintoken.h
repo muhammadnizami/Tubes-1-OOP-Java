@@ -24,7 +24,7 @@ public:
 	Token GetCToken() const; 
 	//!@}
 
-	//!override\n
+	//!@name override\n
 	//!method-method ini mengoverride dengan menambahkan konversi ke token dan disimpan di CToken
 	//!@{
 	//! prekondisi pita karakter tidak kosong
