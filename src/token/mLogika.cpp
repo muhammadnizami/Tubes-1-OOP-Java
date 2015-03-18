@@ -6,6 +6,7 @@
 using std::cout;
 using std::endl;
 
+/*test kelas Logika*/
 int main(){
 	StrToken * a = new Logika();
 	cout<<a->toString(a->toToken("0"))<<endl;
