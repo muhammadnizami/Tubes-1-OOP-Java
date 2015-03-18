@@ -1,3 +1,4 @@
+/*!Driver untuk mengetes kelas mesinkarakter*/
 #include "mesinkar.h"
 #include <iostream>
 #include <cassert>
