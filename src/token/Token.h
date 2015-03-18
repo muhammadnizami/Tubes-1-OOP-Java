@@ -72,7 +72,7 @@ public:
 	void SetBilangan(bool l);
 	//@}
 	
-	//!name predikat
+	//!@name predikat
 	//!boolean, true false. tidak mengubah status token
 	//!@{
 	
@@ -94,7 +94,7 @@ public:
 	//!			gunakan kelas lain)
 	std::string ToStr();
 	
-	//!name method lain
+	//!@name method lain
 	//!untuk digunakan oleh kalkulator atau evaluator\n
 	//!saat dioperasikan, tipe bilangan dapat berubah\n
 	///@{
