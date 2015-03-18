@@ -2,7 +2,8 @@
 #include "UI.h"
 
 
-
+//! main program ini yang di-compile dan di-link saat make
+//! memakai kelas Evaluator dan UI
 int main(){
 	Evaluator E;
 	UI _ui;
