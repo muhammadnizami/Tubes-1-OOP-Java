@@ -279,12 +279,15 @@ string Evaluator::ComputeExprPrefix(string s){
 		}else{
 			if (CToken.isOprUner()){
 				Token t1,th;
+				if (st.Empty()) return "SYNTAX ERROR";
 				st.Pop(&t1);
 				th=CToken.Operasikan(t1);
 				st.Push(th);
 			}else{
 				Token t1,t2,th;
+				if (st.Empty()) return "SYNTAX ERROR";
 				st.Pop(&t1);
+				if (st.Empty()) return "SYNTAX ERROR";
 				st.Pop(&t2);
 				th=CToken.Operasikan(t1,t2);
 				st.Push(th);
@@ -432,12 +435,15 @@ string Evaluator::ComputeExprPostfix(string s){
 		}else{
 			if (mt.GetCToken().isOprUner()){
 				Token t1,th;
+				if (st.Empty()) return "SYNTAX ERROR";
 				st.Pop(&t1);
 				th=mt.GetCToken().Operasikan(t1);
 				st.Push(th);
 			}else{
 				Token t1,t2,th;
+				if (st.Empty()) return "SYNTAX ERROR";
 				st.Pop(&t2);
+				if (st.Empty()) return "SYNTAX ERROR";
 				st.Pop(&t1);
 				th=mt.GetCToken().Operasikan(t1,t2);
 				st.Push(th);
