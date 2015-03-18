@@ -2,10 +2,10 @@
  * Nama         : Ignatius Alriana Haryadi Moel
  * NIM          : 13513051
  * Nama File    : history.h
- * Deskripsi    : Kelas History
+ * Deskripsi    : Driver hisory untuk mengetes Kelas History
  * Tanggal      : 5 Maret 2015
 */
-
+//! Driver hisory untuk mengetes Kelas History
 #include <iostream>
 #include <cstdio>
 #include <cassert>
