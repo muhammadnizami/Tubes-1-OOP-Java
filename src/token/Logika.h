@@ -5,7 +5,14 @@
 #include "Token.h"
 #include "StrToken.h"
 
-//kelas implementasi
+/*! 
+Responsibility
+Kelas ini merupakan implementasi kelas StrToken dengan konversi sesuai aturan bilangan Logika
+Hubungan dengan kelas lain
+mengimplementasi StrToken
+Gambaran umum method
+metodanya adalah implementasi metoda StrToken
+*/
 class Logika:public StrToken{
 	public:
 	virtual bool canConvert(const std::string& s); 	//menembalikan true bila s dapat dikonversi ke token
