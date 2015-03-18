@@ -12,31 +12,29 @@
 
 using namespace std;
 
-// ctor
+//! ctor
 History::History(){
 
 }
+
 History::History(string s,string r){
     MemCmd.Push(s);
     MemRes.Push(r);
 };
 
-//cctor
+//!cctor
 History::History(const History &H){
-    //~MemRes;
-    //~MemCmd;
     MemRes = H.MemRes;
     MemCmd = H.MemCmd;
 };
 
-// dtor
+//! dtor
 History::~History(){
-    //~MemRes;
-    //~MemCmd;
+   
 };
-#include <iostream>
-//predikat
-string History::GetAllBoth(){ // mengeluarkan seluruh history 
+
+//!predikat
+string History::GetAllBoth(){ //! mengeluarkan seluruh history 
     string tmp;
     Stack<string> tmpcmd;
     Stack<string> tmpres;
@@ -54,7 +52,7 @@ string History::GetAllBoth(){ // mengeluarkan seluruh history
     return tmp;
 };
 
-string History::GetAllCmd(){ // mengeluarkan perintah yang pernah dieksekusi 
+string History::GetAllCmd(){ //! mengeluarkan perintah yang pernah dieksekusi 
     string tmp;
     Stack<string> tmpcmd;
     while (!MemCmd.Empty()){
@@ -71,7 +69,7 @@ string History::GetAllCmd(){ // mengeluarkan perintah yang pernah dieksekusi
     return tmp;
 };
 
-string History::GetBoth(int n){ // mengeluarkan n buah history terakhir 
+string History::GetBoth(int n){ //! mengeluarkan n buah history terakhir 
     string tmp;
     Stack<string> tmpcmd;
     Stack<string> tmpres;
@@ -89,7 +87,7 @@ string History::GetBoth(int n){ // mengeluarkan n buah history terakhir
     return tmp;
 };
 
-string History::GetCmd(int n){ // mengeluarkan n buah perintah terakhir
+string History::GetCmd(int n){ //! mengeluarkan n buah perintah terakhir
     string tmp;
     Stack<string> tmpcmd;
     while (!MemCmd.Empty() && n--){
