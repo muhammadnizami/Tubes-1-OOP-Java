@@ -1,3 +1,5 @@
+//g++ mEvaluator.cpp token/converter.cpp history.cpp token/Arab.cpp token/Logika.cpp token/Romawi.cpp token/Operator.cpp token/Token.cpp token/mesintoken.cpp katakr/mesinkar.cpp katakr/mesinkata.cpp Evaluator.cpp FileManager.cpp
+
 #include "Evaluator.h"
 #include <iostream>
 #include <string>

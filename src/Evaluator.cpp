@@ -1,9 +1,12 @@
 #include "Evaluator.h"
 #include "stack/stack.h"
 #include "token/mesintoken.h"
+#include "FileManager.h"
 #include <cassert>
+#include <sstream> //untuk konversi dan redo
 
-string Evaluator::DoCmd(string s){
+
+string Evaluator::DoCmd(string s, bool addToHistory){
 	/*
 
 
@@ -21,25 +24,82 @@ string Evaluator::DoCmd(string s){
 	*/
 	mesinkata mk(s);
 	mk.START();
+	string retval;
 	if (mk.GetKata()=="Set" || Status != depan){
-		return Set(s);
+		retval = Set(s);
+		if (addToHistory /* && Status==depan*/) H.Add(s);
 	}else if (mk.GetKata()=="ShowMem"){
-		return "not implemented";
+		mk.ADV();
+		istringstream ss(mk.GetKata());
+		int n;
+		ss>>n;
+		retval = Mem(n);
+		if (addToHistory) H.Add(s);
 	}else if (s=="Show All"){
-		return "not implemented";
+		retval = MemAll();
+		if (addToHistory) H.Add(s);
 	}else if (mk.GetKata()=="Undo"){
-		return "not implemented";
+		mk.ADV();
+		istringstream ss(mk.GetKata());
+		int n;
+		ss>>n;
+		retval = Undo(n);
+		if (addToHistory) H.Add(s);
 	}else if (mk.GetKata()=="Redo"){
-		return "not implemented";
+		mk.ADV();
+		istringstream ss(mk.GetKata());
+		int n;
+		ss>>n;
+		retval = Redo(n);
+		if (addToHistory) H.Add(s);
 	}else if (mk.GetKata()=="Save"){
-		return "not implemented";
+		retval = Save();
+		if (addToHistory) H.Add(s);
 	}else if (mk.GetKata()=="Quit"){
 		Quit();
 	}else{
-		return ComputeExpr(s);
-		
+		retval = ComputeExpr(s);
+		if (addToHistory) H.Add(s,retval);		
 	}
+	return retval;
 }
+
+string Evaluator::Mem(int n){
+	return H.GetBoth(n);
+}
+
+string Evaluator::MemAll(){
+	return H.GetAllBoth();
+}
+
+string Evaluator::Undo(int n){
+	H.Delete(n);
+	return "berhasil";
+}
+
+string Evaluator::Redo(int n){					//CATATAN: HARUS DIUBAH nanti redo-nya dioverload kalau mau mencegah error
+								//redo di histori menjalankan redo yang sebelumnya.
+	string cmd;
+	std::istringstream ss(H.GetCmd(n));
+	string retval;
+	while (std::getline(ss,cmd)){
+		//cek ada redo lagi atau tidak
+		retval += "> " + cmd + "\n";
+		retval += DoCmd(cmd,false) + "\n"; 
+	}
+	return retval;
+}
+
+string Evaluator::Save(){
+	try{
+		FileManager FM;
+		FM.Save(H);
+	}catch(FileManagerException){
+		return "gagal menyimpan";
+	}
+	return "berhasil menyimpan";
+}
+
 #include<cstdlib>
 void Evaluator::Quit(){
 	exit(0);

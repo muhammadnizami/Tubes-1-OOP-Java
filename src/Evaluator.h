@@ -2,13 +2,14 @@
 #define Evaluator_h
 #include "token/converter.h"
 #include <string>
+#include "history.h"
 
 using std::string;
 
 class Evaluator{
 public:
 	Evaluator(){/*default:*/ M = prefix; Status = depan;};
-	string DoCmd(string);
+	string DoCmd(string, bool addToHistory = true);
 
 	string Redo(int);
 
@@ -38,6 +39,7 @@ private:
 
 	modeOpr M;
 	Converter C;
+	History H;
 
 	enum {depan,_Set,SetModeOpr,SetStringOpr,SetModeBilangan,
 			Set_Kali,
