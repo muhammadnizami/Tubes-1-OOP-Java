@@ -1,5 +1,6 @@
 #include "FileManager.h"
 
+//! test kelas FileManager
 int main(){
 	History H;
 	H.Add("test","test2");
