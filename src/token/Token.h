@@ -70,7 +70,7 @@ public:
 	
 	//!method lain, untuk digunakan oleh kalkulator atau evaluator
 	//!saat dioperasikan, tipe bilangan dapat berubah
-	Token Operasikan(const Token& lhs, const Token& rhs) const; /!/prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()
+	Token Operasikan(const Token& lhs, const Token& rhs) const; //!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()
 						//!mengembalikan <lhs> <this> <rhs>
 	Token Operasikan(const Token& rhs) const; 	//!prekondisi: isOprUner() && rhs.isBilangan()
 					//!mengembalikan <this> <rhs>
