@@ -144,6 +144,6 @@ void Stack<T>::Push(T elemen){
 
 template <class T>
 void Stack<T>::Pop(T *elemen){
-    assert !Empty() *elemen=Tab[TOP];TOP--;
+    assert (!Empty()); *elemen=Tab[TOP];TOP--;
 };
 #endif
