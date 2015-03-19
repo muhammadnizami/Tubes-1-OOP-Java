@@ -2,63 +2,67 @@
 #define mesinkar_h
 
 #include <string>
-
-class mesinkar{
    /*! Kelas mesinkar berguna untuk membaca string input satu per satu
    tidak ada ketergantungan kelas
    */
+class mesinkar{
    public:
+    /*! konstruktor
+   */
    mesinkar();
-   /*! konstruktor
+     /*! konstruktor dengan paramater
    */
    mesinkar (const std::string& _pitakar);
-   /*! konstruktor dengan paramater
-   */
-   mesinkar (const mesinkar& m);
    /*! copy constructor
    */
-   mesinkar& operator=(const mesinkar& m);
+   mesinkar (const mesinkar& m);
    /*! operator assignment
    */
-   ~mesinkar();
+   mesinkar& operator=(const mesinkar& m);
    /*! destruktor
    */
+   ~mesinkar();
+
    ///Getter
-   char GetCC() const;
-   /*! mengembalikan character yang terakhir dibaca      
+    /*! mengembalikan character yang terakhir dibaca      
    */
-   bool GetEnd() const;
+   char GetCC() const;
    /*! mengembalikan apakah pembacaan string sudah selesai
    */
-   const std::string& GetPitaKarakter() const;
+   bool GetEnd() const;
    /*! mengembalikan string yang sedang dibaca
    */
-   int GetIdxChar() const;
+   const std::string& GetPitaKarakter() const;
    /*! mengembalikan indeks karakter dalam string yang terakhir dibaca
    */
+   int GetIdxChar() const;
+
    ///Setter
-   void SetCC(char CT); 
    /*!I.S : Sembarang
-   F.S : CC = CT*/
-   void SetEnd(bool ET); /*!
+   F.S : CC = CT*/   
+   void SetCC(char CT); 
+   /*!
    I.S : Sembarang
    F.S : End = ET */
-   void SetPitaKarakter(const std::string& ST); 
+   void SetEnd(bool ET);
    /*!I.S : String tidak kosong
    F.S PitaKarakter = ST*/
-   void SetIdxChar(int i); 
+   void SetPitaKarakter(const std::string& ST); 
    /*!I.S : Sembarang;
    F.S : idxChar = i   */
+   void SetIdxChar(int i); 
+
    ///Fungsi
-   void START(); 
    /*! I.S : Sembarang
    F.S L idxChar = 0, CC = char PitaKarakter pada idxChar, End = false*/
-   void ADV(); 
+   void START(); 
    /*! I.S : START() sudah dipanggil
    F.S : idxChar +=1, CC = char PitaKarakter pada idxChar, End = true jika EOP / false jika belum EOP
    */
-   bool EOP() const; /*!
+   void ADV(); 
+   /*!
    mengembalikan true jika End == true*/
+   bool EOP() const;
    private:
    char CC; 
    bool End;
