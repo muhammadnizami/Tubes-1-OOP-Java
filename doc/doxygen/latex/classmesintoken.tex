@@ -1,0 +1,117 @@
+\hypertarget{classmesintoken}{\section{mesintoken Class Reference}
+\label{classmesintoken}\index{mesintoken@{mesintoken}}
+}
+
+
+{\ttfamily \#include $<$mesintoken.\-h$>$}
+
+
+
+Inheritance diagram for mesintoken\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classmesintoken__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mesintoken\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classmesintoken__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmesintoken_aecc28dabdb54b87985b0ccd62f119f8f}{mesintoken} (const std\-::string \&S\-T)
+\begin{DoxyCompactList}\small\item\em membentuk mesin token dengan pita karakter S\-T \end{DoxyCompactList}\item 
+\hyperlink{classmesintoken_a36904a5bfe632c649790f47626ecd6cb}{mesintoken} (const std\-::string \&S\-T, const \hyperlink{class_converter}{Converter} \&\-\_\-cvt)
+\begin{DoxyCompactList}\small\item\em membentuk mesin token dengan pita karakter S\-T dan converter cvt \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_token}{Token} \hyperlink{classmesintoken_a996213e867abc8a7f20a06630df9ab89}{Get\-C\-Token} () const 
+\end{DoxyCompactItemize}
+
+\begin{Indent}{\bf override\textbackslash{}n}\par
+{\em method-\/method ini mengoverride dengan menambahkan konversi ke token dan disimpan di C\-Token
+
+prekondisi pita karakter tidak kosong }\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmesintoken_a1a5b2f1c7ddd5f763a8f94d8e1c7a37c}{S\-T\-A\-R\-T} ()
+\item 
+void \hyperlink{classmesintoken_affa342e1600ea0fa9e6d6f40cd76919e}{A\-D\-V} ()
+\begin{DoxyCompactList}\small\item\em prekondisi\-: !\-Get\-End() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+tidak bisa untuk polymorphism\par
+virtual destruktor belum diimplementasi (tidak dibutuhkan untuk proyek ini)\par
+Responsibility\par
+Membaca ekspresi token per token\par
+Kelas ini menggunakan std\-::string. Kelas ini mewarisi Mesin Kata. Kelas ini mengandung kelas converter.\par
+Method kelas ini meliputi konstruktor yang menerima string pita karakter, \hyperlink{classmesintoken_a1a5b2f1c7ddd5f763a8f94d8e1c7a37c}{S\-T\-A\-R\-T()}, \hyperlink{classmesintoken_affa342e1600ea0fa9e6d6f40cd76919e}{A\-D\-V()}, \hyperlink{classmesintoken_a996213e867abc8a7f20a06630df9ab89}{Get\-C\-Token()}. Start memulai mesin, A\-D\-V memajukan satu token, dan \hyperlink{classmesintoken_a996213e867abc8a7f20a06630df9ab89}{Get\-C\-Token()} mengakses token yang sedang dibaca.\par
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmesintoken_aecc28dabdb54b87985b0ccd62f119f8f}{\index{mesintoken@{mesintoken}!mesintoken@{mesintoken}}
+\index{mesintoken@{mesintoken}!mesintoken@{mesintoken}}
+\subsubsection[{mesintoken}]{\setlength{\rightskip}{0pt plus 5cm}mesintoken\-::mesintoken (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{S\-T}
+\end{DoxyParamCaption}
+)}}\label{classmesintoken_aecc28dabdb54b87985b0ccd62f119f8f}
+
+
+membentuk mesin token dengan pita karakter S\-T 
+
+\hypertarget{classmesintoken_a36904a5bfe632c649790f47626ecd6cb}{\index{mesintoken@{mesintoken}!mesintoken@{mesintoken}}
+\index{mesintoken@{mesintoken}!mesintoken@{mesintoken}}
+\subsubsection[{mesintoken}]{\setlength{\rightskip}{0pt plus 5cm}mesintoken\-::mesintoken (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{S\-T, }
+\item[{const {\bf Converter} \&}]{\-\_\-cvt}
+\end{DoxyParamCaption}
+)}}\label{classmesintoken_a36904a5bfe632c649790f47626ecd6cb}
+
+
+membentuk mesin token dengan pita karakter S\-T dan converter cvt 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmesintoken_affa342e1600ea0fa9e6d6f40cd76919e}{\index{mesintoken@{mesintoken}!A\-D\-V@{A\-D\-V}}
+\index{A\-D\-V@{A\-D\-V}!mesintoken@{mesintoken}}
+\subsubsection[{A\-D\-V}]{\setlength{\rightskip}{0pt plus 5cm}void mesintoken\-::\-A\-D\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmesintoken_affa342e1600ea0fa9e6d6f40cd76919e}
+
+
+prekondisi\-: !\-Get\-End() 
+
+\hypertarget{classmesintoken_a996213e867abc8a7f20a06630df9ab89}{\index{mesintoken@{mesintoken}!Get\-C\-Token@{Get\-C\-Token}}
+\index{Get\-C\-Token@{Get\-C\-Token}!mesintoken@{mesintoken}}
+\subsubsection[{Get\-C\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} mesintoken\-::\-Get\-C\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmesintoken_a996213e867abc8a7f20a06630df9ab89}
+Getter prekondisi\-: !\-Get\-End() \hypertarget{classmesintoken_a1a5b2f1c7ddd5f763a8f94d8e1c7a37c}{\index{mesintoken@{mesintoken}!S\-T\-A\-R\-T@{S\-T\-A\-R\-T}}
+\index{S\-T\-A\-R\-T@{S\-T\-A\-R\-T}!mesintoken@{mesintoken}}
+\subsubsection[{S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}void mesintoken\-::\-S\-T\-A\-R\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmesintoken_a1a5b2f1c7ddd5f763a8f94d8e1c7a37c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{mesintoken_8h}{mesintoken.\-h}\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{mesintoken_8cpp}{mesintoken.\-cpp}\end{DoxyCompactItemize}

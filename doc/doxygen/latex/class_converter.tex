@@ -1,0 +1,145 @@
+\hypertarget{class_converter}{\section{Converter Class Reference}
+\label{class_converter}\index{Converter@{Converter}}
+}
+
+
+{\ttfamily \#include $<$converter.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_converter_a1caaefa1f3fba463bd215e8e7f12872f}{Tipe\-Representasi\-Bilangan} \{ \hyperlink{class_converter_a1caaefa1f3fba463bd215e8e7f12872fa42f9bbd983a4ccdf72f2fc2bfe26efe7}{\-\_\-\-Arab}, 
+\hyperlink{class_converter_a1caaefa1f3fba463bd215e8e7f12872faab56d50b2561f79548c4fc6e700d7005}{\-\_\-\-Romawi}, 
+\hyperlink{class_converter_a1caaefa1f3fba463bd215e8e7f12872fa5688eeb94a505273115a1f2f75d40212}{\-\_\-\-Logika}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_converter_a8a22c530d91f9b0de64c28cb990dc6bb}{to\-String} (const \hyperlink{class_token}{Token} \&)
+\begin{DoxyCompactList}\small\item\em mengkonversi token ke string \end{DoxyCompactList}\item 
+\hyperlink{class_token}{Token} \hyperlink{class_converter_aa7b74352c29c5bcf28ed85cf892f3517}{to\-Token} (const std\-::string \&)
+\begin{DoxyCompactList}\small\item\em mengkonversi string ke token. melempar exception bila gagal \end{DoxyCompactList}\item 
+void \hyperlink{class_converter_a4897e820fd8ab55da965cefda2901fc1}{Set\-Mode} (\hyperlink{class_converter_a1caaefa1f3fba463bd215e8e7f12872f}{Tipe\-Representasi\-Bilangan})
+\begin{DoxyCompactList}\small\item\em mengeset apakah converter menggunakan bilangan \-\_\-\-Arab, \-\_\-\-Romawi, atau \-\_\-\-Logika \end{DoxyCompactList}\item 
+void \hyperlink{class_converter_a60a0c269a84ec77acf6a7f4ee9ce589e}{Set\-Str\-Operator} (const std\-::string \&, \hyperlink{_token_8h_a29ea73031d51befacf649fa6af865e30}{Tipe\-Token})
+\begin{DoxyCompactList}\small\item\em mengeset representasi operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_converter_a1de81f3e06093411e5d27ce882bc010f}{Converter} ()
+\item 
+\hyperlink{class_converter_a11cf08fca2f84ab67fec9b935badca90}{Converter} (const \hyperlink{class_converter}{Converter} \&C)
+\item 
+\hyperlink{class_converter_a9ecd05695a52c03158b81e544e13b996}{$\sim$\-Converter} ()
+\item 
+\hyperlink{class_converter}{Converter} \& \hyperlink{class_converter_addd00b03af5ab50e3586e7889e6d6ce9}{operator=} (const \hyperlink{class_converter}{Converter} \&C)
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+Responsibility Kelas ini bertugas mengkonversi seluruh kata yang valid menjadi token, baik operand maupun operator Hubungan dengan kelas lain Ia merupakan agregasi dari \hyperlink{class_str_token}{Str\-Token} dan/atau Turunannya Gambaran umum method metodanya adalah to\-String dan to\-Token. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_converter_a1caaefa1f3fba463bd215e8e7f12872f}{\index{Converter@{Converter}!Tipe\-Representasi\-Bilangan@{Tipe\-Representasi\-Bilangan}}
+\index{Tipe\-Representasi\-Bilangan@{Tipe\-Representasi\-Bilangan}!Converter@{Converter}}
+\subsubsection[{Tipe\-Representasi\-Bilangan}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Converter\-::\-Tipe\-Representasi\-Bilangan}}}\label{class_converter_a1caaefa1f3fba463bd215e8e7f12872f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{\-\_\-\-Arab@{\-\_\-\-Arab}!Converter@{Converter}}\index{Converter@{Converter}!\-\_\-\-Arab@{\-\_\-\-Arab}}\item[{\em 
+\hypertarget{class_converter_a1caaefa1f3fba463bd215e8e7f12872fa42f9bbd983a4ccdf72f2fc2bfe26efe7}{\-\_\-\-Arab}\label{class_converter_a1caaefa1f3fba463bd215e8e7f12872fa42f9bbd983a4ccdf72f2fc2bfe26efe7}
+}]\index{\-\_\-\-Romawi@{\-\_\-\-Romawi}!Converter@{Converter}}\index{Converter@{Converter}!\-\_\-\-Romawi@{\-\_\-\-Romawi}}\item[{\em 
+\hypertarget{class_converter_a1caaefa1f3fba463bd215e8e7f12872faab56d50b2561f79548c4fc6e700d7005}{\-\_\-\-Romawi}\label{class_converter_a1caaefa1f3fba463bd215e8e7f12872faab56d50b2561f79548c4fc6e700d7005}
+}]\index{\-\_\-\-Logika@{\-\_\-\-Logika}!Converter@{Converter}}\index{Converter@{Converter}!\-\_\-\-Logika@{\-\_\-\-Logika}}\item[{\em 
+\hypertarget{class_converter_a1caaefa1f3fba463bd215e8e7f12872fa5688eeb94a505273115a1f2f75d40212}{\-\_\-\-Logika}\label{class_converter_a1caaefa1f3fba463bd215e8e7f12872fa5688eeb94a505273115a1f2f75d40212}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_converter_a1de81f3e06093411e5d27ce882bc010f}{\index{Converter@{Converter}!Converter@{Converter}}
+\index{Converter@{Converter}!Converter@{Converter}}
+\subsubsection[{Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\-::\-Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_converter_a1de81f3e06093411e5d27ce882bc010f}
+cctor,ctor,dtor
+
+default\-: operator default dan bilangan arab \hypertarget{class_converter_a11cf08fca2f84ab67fec9b935badca90}{\index{Converter@{Converter}!Converter@{Converter}}
+\index{Converter@{Converter}!Converter@{Converter}}
+\subsubsection[{Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\-::\-Converter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Converter} \&}]{C}
+\end{DoxyParamCaption}
+)}}\label{class_converter_a11cf08fca2f84ab67fec9b935badca90}
+\hypertarget{class_converter_a9ecd05695a52c03158b81e544e13b996}{\index{Converter@{Converter}!$\sim$\-Converter@{$\sim$\-Converter}}
+\index{$\sim$\-Converter@{$\sim$\-Converter}!Converter@{Converter}}
+\subsubsection[{$\sim$\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\-::$\sim$\-Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_converter_a9ecd05695a52c03158b81e544e13b996}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_converter_addd00b03af5ab50e3586e7889e6d6ce9}{\index{Converter@{Converter}!operator=@{operator=}}
+\index{operator=@{operator=}!Converter@{Converter}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Converter} \& Converter\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Converter} \&}]{C}
+\end{DoxyParamCaption}
+)}}\label{class_converter_addd00b03af5ab50e3586e7889e6d6ce9}
+\hypertarget{class_converter_a4897e820fd8ab55da965cefda2901fc1}{\index{Converter@{Converter}!Set\-Mode@{Set\-Mode}}
+\index{Set\-Mode@{Set\-Mode}!Converter@{Converter}}
+\subsubsection[{Set\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Converter\-::\-Set\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Tipe\-Representasi\-Bilangan}}]{T\-R\-B}
+\end{DoxyParamCaption}
+)}}\label{class_converter_a4897e820fd8ab55da965cefda2901fc1}
+
+
+mengeset apakah converter menggunakan bilangan \-\_\-\-Arab, \-\_\-\-Romawi, atau \-\_\-\-Logika 
+
+\hypertarget{class_converter_a60a0c269a84ec77acf6a7f4ee9ce589e}{\index{Converter@{Converter}!Set\-Str\-Operator@{Set\-Str\-Operator}}
+\index{Set\-Str\-Operator@{Set\-Str\-Operator}!Converter@{Converter}}
+\subsubsection[{Set\-Str\-Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Converter\-::\-Set\-Str\-Operator (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s, }
+\item[{{\bf Tipe\-Token}}]{tt}
+\end{DoxyParamCaption}
+)}}\label{class_converter_a60a0c269a84ec77acf6a7f4ee9ce589e}
+
+
+mengeset representasi operator 
+
+\hypertarget{class_converter_a8a22c530d91f9b0de64c28cb990dc6bb}{\index{Converter@{Converter}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Converter@{Converter}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Converter\-::to\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token} \&}]{T}
+\end{DoxyParamCaption}
+)}}\label{class_converter_a8a22c530d91f9b0de64c28cb990dc6bb}
+
+
+mengkonversi token ke string 
+
+\hypertarget{class_converter_aa7b74352c29c5bcf28ed85cf892f3517}{\index{Converter@{Converter}!to\-Token@{to\-Token}}
+\index{to\-Token@{to\-Token}!Converter@{Converter}}
+\subsubsection[{to\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} Converter\-::to\-Token (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_converter_aa7b74352c29c5bcf28ed85cf892f3517}
+
+
+mengkonversi string ke token. melempar exception bila gagal 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{converter_8h}{converter.\-h}\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{converter_8cpp}{converter.\-cpp}\end{DoxyCompactItemize}

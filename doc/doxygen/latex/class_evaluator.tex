@@ -1,0 +1,188 @@
+\hypertarget{class_evaluator}{\section{Evaluator Class Reference}
+\label{class_evaluator}\index{Evaluator@{Evaluator}}
+}
+
+
+{\ttfamily \#include $<$Evaluator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_evaluator_ab0fae467aa1c3870f9cfb0c8368710be}{Evaluator} ()
+\item 
+string \hyperlink{class_evaluator_a2b676b6f20467704c56df20b31cff5b3}{Do\-Cmd} (string, bool add\-To\-History=true)
+\begin{DoxyCompactList}\small\item\em melakukan perintah \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_afcc41151e1e6ad0d07bbb4224dd74629}{Redo} (int)
+\begin{DoxyCompactList}\small\item\em mengulang n buah perintah \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_ab2c3addba566d6259b99def095bbbc5d}{Mem\-All} ()
+\begin{DoxyCompactList}\small\item\em menampilkan semua perintah \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_a4ceb00f94149585a46cc35ef41928899}{Mem} (int)
+\begin{DoxyCompactList}\small\item\em menampilkan n buah perintah \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_ad82d60da69a7c7a1189778e0032c4a73}{Undo} (int)
+\begin{DoxyCompactList}\small\item\em menghapus n buah perintah \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_aeb82037e6e511050a4e7511b765e990a}{Compute\-Expr} (string)
+\begin{DoxyCompactList}\small\item\em menghitung ekspresi, menggunakan mesin token dan stack \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_aa62da9339a78c89f246dbe827951515a}{Compute\-Expr\-Prefix} (string)
+\begin{DoxyCompactList}\small\item\em menghitung ekspresi prefix \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_a7672b370d77902ad183223846820b212}{Compute\-Expr\-Infix} (string)
+\begin{DoxyCompactList}\small\item\em menghitung ekspresi infix \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_a72f837e9d38d47d599a43f3c4e60aef5}{Compute\-Expr\-Postfix} (string)
+\begin{DoxyCompactList}\small\item\em menghitung ekspresi postfix \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_a3fe98d459400fd7a458456cd6f5e2d91}{Save} ()
+\begin{DoxyCompactList}\small\item\em menyimpan histori \end{DoxyCompactList}\item 
+string \hyperlink{class_evaluator_a09afbb85d94fe5dd7107676b1ec6bc4b}{Set} (string s)
+\begin{DoxyCompactList}\small\item\em melakukan setting \end{DoxyCompactList}\item 
+void \hyperlink{class_evaluator_aef032056072f0d51c7e126857653de5b}{Quit} ()
+\begin{DoxyCompactList}\small\item\em keluar \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_evaluator_ab0fae467aa1c3870f9cfb0c8368710be}{\index{Evaluator@{Evaluator}!Evaluator@{Evaluator}}
+\index{Evaluator@{Evaluator}!Evaluator@{Evaluator}}
+\subsubsection[{Evaluator}]{\setlength{\rightskip}{0pt plus 5cm}Evaluator\-::\-Evaluator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_evaluator_ab0fae467aa1c3870f9cfb0c8368710be}
+ctor default\-: 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_evaluator_aeb82037e6e511050a4e7511b765e990a}{\index{Evaluator@{Evaluator}!Compute\-Expr@{Compute\-Expr}}
+\index{Compute\-Expr@{Compute\-Expr}!Evaluator@{Evaluator}}
+\subsubsection[{Compute\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Compute\-Expr (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_aeb82037e6e511050a4e7511b765e990a}
+
+
+menghitung ekspresi, menggunakan mesin token dan stack 
+
+\hypertarget{class_evaluator_a7672b370d77902ad183223846820b212}{\index{Evaluator@{Evaluator}!Compute\-Expr\-Infix@{Compute\-Expr\-Infix}}
+\index{Compute\-Expr\-Infix@{Compute\-Expr\-Infix}!Evaluator@{Evaluator}}
+\subsubsection[{Compute\-Expr\-Infix}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Compute\-Expr\-Infix (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_a7672b370d77902ad183223846820b212}
+
+
+menghitung ekspresi infix 
+
+\hypertarget{class_evaluator_a72f837e9d38d47d599a43f3c4e60aef5}{\index{Evaluator@{Evaluator}!Compute\-Expr\-Postfix@{Compute\-Expr\-Postfix}}
+\index{Compute\-Expr\-Postfix@{Compute\-Expr\-Postfix}!Evaluator@{Evaluator}}
+\subsubsection[{Compute\-Expr\-Postfix}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Compute\-Expr\-Postfix (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_a72f837e9d38d47d599a43f3c4e60aef5}
+
+
+menghitung ekspresi postfix 
+
+\hypertarget{class_evaluator_aa62da9339a78c89f246dbe827951515a}{\index{Evaluator@{Evaluator}!Compute\-Expr\-Prefix@{Compute\-Expr\-Prefix}}
+\index{Compute\-Expr\-Prefix@{Compute\-Expr\-Prefix}!Evaluator@{Evaluator}}
+\subsubsection[{Compute\-Expr\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Compute\-Expr\-Prefix (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_aa62da9339a78c89f246dbe827951515a}
+
+
+menghitung ekspresi prefix 
+
+\hypertarget{class_evaluator_a2b676b6f20467704c56df20b31cff5b3}{\index{Evaluator@{Evaluator}!Do\-Cmd@{Do\-Cmd}}
+\index{Do\-Cmd@{Do\-Cmd}!Evaluator@{Evaluator}}
+\subsubsection[{Do\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Do\-Cmd (
+\begin{DoxyParamCaption}
+\item[{string}]{s, }
+\item[{bool}]{add\-To\-History = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_a2b676b6f20467704c56df20b31cff5b3}
+
+
+melakukan perintah 
+
+\hypertarget{class_evaluator_a4ceb00f94149585a46cc35ef41928899}{\index{Evaluator@{Evaluator}!Mem@{Mem}}
+\index{Mem@{Mem}!Evaluator@{Evaluator}}
+\subsubsection[{Mem}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Mem (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_a4ceb00f94149585a46cc35ef41928899}
+
+
+menampilkan n buah perintah 
+
+\hypertarget{class_evaluator_ab2c3addba566d6259b99def095bbbc5d}{\index{Evaluator@{Evaluator}!Mem\-All@{Mem\-All}}
+\index{Mem\-All@{Mem\-All}!Evaluator@{Evaluator}}
+\subsubsection[{Mem\-All}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Mem\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_ab2c3addba566d6259b99def095bbbc5d}
+
+
+menampilkan semua perintah 
+
+\hypertarget{class_evaluator_aef032056072f0d51c7e126857653de5b}{\index{Evaluator@{Evaluator}!Quit@{Quit}}
+\index{Quit@{Quit}!Evaluator@{Evaluator}}
+\subsubsection[{Quit}]{\setlength{\rightskip}{0pt plus 5cm}void Evaluator\-::\-Quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_aef032056072f0d51c7e126857653de5b}
+
+
+keluar 
+
+\hypertarget{class_evaluator_afcc41151e1e6ad0d07bbb4224dd74629}{\index{Evaluator@{Evaluator}!Redo@{Redo}}
+\index{Redo@{Redo}!Evaluator@{Evaluator}}
+\subsubsection[{Redo}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Redo (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_afcc41151e1e6ad0d07bbb4224dd74629}
+
+
+mengulang n buah perintah 
+
+\hypertarget{class_evaluator_a3fe98d459400fd7a458456cd6f5e2d91}{\index{Evaluator@{Evaluator}!Save@{Save}}
+\index{Save@{Save}!Evaluator@{Evaluator}}
+\subsubsection[{Save}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_a3fe98d459400fd7a458456cd6f5e2d91}
+
+
+menyimpan histori 
+
+\hypertarget{class_evaluator_a09afbb85d94fe5dd7107676b1ec6bc4b}{\index{Evaluator@{Evaluator}!Set@{Set}}
+\index{Set@{Set}!Evaluator@{Evaluator}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Set (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_a09afbb85d94fe5dd7107676b1ec6bc4b}
+
+
+melakukan setting 
+
+sebuah finite state machine untuk mengubah pengaturan \hypertarget{class_evaluator_ad82d60da69a7c7a1189778e0032c4a73}{\index{Evaluator@{Evaluator}!Undo@{Undo}}
+\index{Undo@{Undo}!Evaluator@{Evaluator}}
+\subsubsection[{Undo}]{\setlength{\rightskip}{0pt plus 5cm}string Evaluator\-::\-Undo (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_evaluator_ad82d60da69a7c7a1189778e0032c4a73}
+
+
+menghapus n buah perintah 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/\hyperlink{_evaluator_8h}{Evaluator.\-h}\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/\hyperlink{_evaluator_8cpp}{Evaluator.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,269 @@
+\hypertarget{class_token}{\section{Token Class Reference}
+\label{class_token}\index{Token@{Token}}
+}
+
+
+{\ttfamily \#include $<$Token.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_token_aa3c5868ba4115f3189df6b2ac5b36f39}{Token} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_token_aae7b73d9d7cdeaa0a05cc51fbf752e14}{To\-Str} ()
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf getter}\par
+{\em tidak mengubah status token }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_token_8h_a29ea73031d51befacf649fa6af865e30}{Tipe\-Token} \hyperlink{class_token_a735a4c2ae32ddce6c8ade6d8ab06f02b}{get\-Tkn} () const 
+\begin{DoxyCompactList}\small\item\em mengembalikan tipe token tersebut \end{DoxyCompactList}\item 
+\hyperlink{_token_8h_a074bf6c0d33845f3d36e457b9243dcfb}{Tipe} \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan} () const 
+\begin{DoxyCompactList}\small\item\em prekondisi\-: \hyperlink{class_token_a735a4c2ae32ddce6c8ade6d8ab06f02b}{get\-Tkn()}==Bilangan \end{DoxyCompactList}\item 
+int \hyperlink{class_token_aeced03b265a97a1b8cfd557f4613192a}{get\-Bilangan\-Int} () const 
+\begin{DoxyCompactList}\small\item\em prekondisi\-: \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan()}==\-\_\-int \end{DoxyCompactList}\item 
+float \hyperlink{class_token_a32f0323896e15112a72b49bed901cd2e}{get\-Bilangan\-Float} () const 
+\begin{DoxyCompactList}\small\item\em prekondisi\-: \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan()}==\-\_\-float \end{DoxyCompactList}\item 
+bool \hyperlink{class_token_a6ff4b84802344ed9336e27590d7d4b51}{get\-Bilangan\-Bool} () const 
+\begin{DoxyCompactList}\small\item\em prekondisi\-: \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan()}==\-\_\-bool \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf setter}\par
+{\em status token. Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya }\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_token_ae785baf319454717be06d9ffb11ffd4c}{Set\-Tkn} (\hyperlink{_token_8h_a29ea73031d51befacf649fa6af865e30}{Tipe\-Token} \-\_\-\-Tkn)
+\begin{DoxyCompactList}\small\item\em mengeset token \end{DoxyCompactList}\item 
+void \hyperlink{class_token_aee9cf292baf9525d39d01edf5d9d7797}{Set\-Bilangan} (float f)
+\begin{DoxyCompactList}\small\item\em mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f \end{DoxyCompactList}\item 
+void \hyperlink{class_token_ab36a4340c125fc641e319c5261ab13f7}{Set\-Bilangan} (int i)
+\begin{DoxyCompactList}\small\item\em mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi int dan isinya i \end{DoxyCompactList}\item 
+void \hyperlink{class_token_afe10550438e63b07c82f1ab9fac4fd98}{Set\-Bilangan} (bool l)
+\begin{DoxyCompactList}\small\item\em mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi logika dan isinya l \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf predikat}\par
+{\em boolean, true false. tidak mengubah status token }\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_token_a8a15bf44ca4622994dfce8e43f78d76c}{is\-Punctuator} () const 
+\begin{DoxyCompactList}\small\item\em mengembalikan true bila ( atau ) \end{DoxyCompactList}\item 
+bool \hyperlink{class_token_a08c5aa25effd9d4b7dd5e2dda0f72058}{is\-Opr\-Uner} () const 
+\begin{DoxyCompactList}\small\item\em mengembalikan true bila ia operator uner \end{DoxyCompactList}\item 
+bool \hyperlink{class_token_aa601738aa08b5ad132d038b0c806fab9}{is\-Opr\-Biner} () const 
+\begin{DoxyCompactList}\small\item\em mengembalikan true bila ia operator uner \end{DoxyCompactList}\item 
+bool \hyperlink{class_token_a3db1e9f877edcdc5f12fdea1496e7526}{is\-Bilangan} () const 
+\begin{DoxyCompactList}\small\item\em mengembalikan true bila token merupakan bilangan \end{DoxyCompactList}\item 
+bool \hyperlink{class_token_a40f66005d5df3d37c679258f2c9ab796}{is\-Smaller\-Precedence\-Than} (const \hyperlink{class_token}{Token} \&T)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf method lain}\par
+{\em untuk digunakan oleh kalkulator atau evaluator\par
+saat dioperasikan, tipe bilangan dapat berubah\par
+}\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_token}{Token} \hyperlink{class_token_a7e04e49806d087cbc8062bafe848e471}{Operasikan} (const \hyperlink{class_token}{Token} \&lhs, const \hyperlink{class_token}{Token} \&rhs) const 
+\item 
+\hyperlink{class_token}{Token} \hyperlink{class_token_ace8d206103c7cd6bda80c9f2beea462b}{Operasikan} (const \hyperlink{class_token}{Token} \&rhs) const 
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Kelas token bertanggung jawab sebagai objek yang dapat dimengerti oleh evaluator. Kelas token bertanggung jawab atas jenis-\/jenis bilangan dan operator serta perilakunya perilaku operator yaitu presedensi serta bagaimana operator tersebut mengoperasikan operand 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_token_aa3c5868ba4115f3189df6b2ac5b36f39}{\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\subsubsection[{Token}]{\setlength{\rightskip}{0pt plus 5cm}Token\-::\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_token_aa3c5868ba4115f3189df6b2ac5b36f39}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_token_a6ff4b84802344ed9336e27590d7d4b51}{\index{Token@{Token}!get\-Bilangan\-Bool@{get\-Bilangan\-Bool}}
+\index{get\-Bilangan\-Bool@{get\-Bilangan\-Bool}!Token@{Token}}
+\subsubsection[{get\-Bilangan\-Bool}]{\setlength{\rightskip}{0pt plus 5cm}bool Token\-::get\-Bilangan\-Bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a6ff4b84802344ed9336e27590d7d4b51}
+
+
+prekondisi\-: \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan()}==\-\_\-bool 
+
+\hypertarget{class_token_a32f0323896e15112a72b49bed901cd2e}{\index{Token@{Token}!get\-Bilangan\-Float@{get\-Bilangan\-Float}}
+\index{get\-Bilangan\-Float@{get\-Bilangan\-Float}!Token@{Token}}
+\subsubsection[{get\-Bilangan\-Float}]{\setlength{\rightskip}{0pt plus 5cm}float Token\-::get\-Bilangan\-Float (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a32f0323896e15112a72b49bed901cd2e}
+
+
+prekondisi\-: \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan()}==\-\_\-float 
+
+\hypertarget{class_token_aeced03b265a97a1b8cfd557f4613192a}{\index{Token@{Token}!get\-Bilangan\-Int@{get\-Bilangan\-Int}}
+\index{get\-Bilangan\-Int@{get\-Bilangan\-Int}!Token@{Token}}
+\subsubsection[{get\-Bilangan\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Token\-::get\-Bilangan\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_aeced03b265a97a1b8cfd557f4613192a}
+
+
+prekondisi\-: \hyperlink{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{get\-Tipe\-Bilangan()}==\-\_\-int 
+
+\hypertarget{class_token_af25c1d47e7bf11aa08b1c32aa4920769}{\index{Token@{Token}!get\-Tipe\-Bilangan@{get\-Tipe\-Bilangan}}
+\index{get\-Tipe\-Bilangan@{get\-Tipe\-Bilangan}!Token@{Token}}
+\subsubsection[{get\-Tipe\-Bilangan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tipe} Token\-::get\-Tipe\-Bilangan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_af25c1d47e7bf11aa08b1c32aa4920769}
+
+
+prekondisi\-: \hyperlink{class_token_a735a4c2ae32ddce6c8ade6d8ab06f02b}{get\-Tkn()}==Bilangan 
+
+\hypertarget{class_token_a735a4c2ae32ddce6c8ade6d8ab06f02b}{\index{Token@{Token}!get\-Tkn@{get\-Tkn}}
+\index{get\-Tkn@{get\-Tkn}!Token@{Token}}
+\subsubsection[{get\-Tkn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tipe\-Token} Token\-::get\-Tkn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a735a4c2ae32ddce6c8ade6d8ab06f02b}
+
+
+mengembalikan tipe token tersebut 
+
+\hypertarget{class_token_a3db1e9f877edcdc5f12fdea1496e7526}{\index{Token@{Token}!is\-Bilangan@{is\-Bilangan}}
+\index{is\-Bilangan@{is\-Bilangan}!Token@{Token}}
+\subsubsection[{is\-Bilangan}]{\setlength{\rightskip}{0pt plus 5cm}bool Token\-::is\-Bilangan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a3db1e9f877edcdc5f12fdea1496e7526}
+
+
+mengembalikan true bila token merupakan bilangan 
+
+\hypertarget{class_token_aa601738aa08b5ad132d038b0c806fab9}{\index{Token@{Token}!is\-Opr\-Biner@{is\-Opr\-Biner}}
+\index{is\-Opr\-Biner@{is\-Opr\-Biner}!Token@{Token}}
+\subsubsection[{is\-Opr\-Biner}]{\setlength{\rightskip}{0pt plus 5cm}bool Token\-::is\-Opr\-Biner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_aa601738aa08b5ad132d038b0c806fab9}
+
+
+mengembalikan true bila ia operator uner 
+
+\hypertarget{class_token_a08c5aa25effd9d4b7dd5e2dda0f72058}{\index{Token@{Token}!is\-Opr\-Uner@{is\-Opr\-Uner}}
+\index{is\-Opr\-Uner@{is\-Opr\-Uner}!Token@{Token}}
+\subsubsection[{is\-Opr\-Uner}]{\setlength{\rightskip}{0pt plus 5cm}bool Token\-::is\-Opr\-Uner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a08c5aa25effd9d4b7dd5e2dda0f72058}
+
+
+mengembalikan true bila ia operator uner 
+
+\hypertarget{class_token_a8a15bf44ca4622994dfce8e43f78d76c}{\index{Token@{Token}!is\-Punctuator@{is\-Punctuator}}
+\index{is\-Punctuator@{is\-Punctuator}!Token@{Token}}
+\subsubsection[{is\-Punctuator}]{\setlength{\rightskip}{0pt plus 5cm}bool Token\-::is\-Punctuator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a8a15bf44ca4622994dfce8e43f78d76c}
+
+
+mengembalikan true bila ( atau ) 
+
+\hypertarget{class_token_a40f66005d5df3d37c679258f2c9ab796}{\index{Token@{Token}!is\-Smaller\-Precedence\-Than@{is\-Smaller\-Precedence\-Than}}
+\index{is\-Smaller\-Precedence\-Than@{is\-Smaller\-Precedence\-Than}!Token@{Token}}
+\subsubsection[{is\-Smaller\-Precedence\-Than}]{\setlength{\rightskip}{0pt plus 5cm}bool Token\-::is\-Smaller\-Precedence\-Than (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token} \&}]{T}
+\end{DoxyParamCaption}
+)}}\label{class_token_a40f66005d5df3d37c679258f2c9ab796}
+prekondisi\-: \hyperlink{class_token_a08c5aa25effd9d4b7dd5e2dda0f72058}{is\-Opr\-Uner()} $\vert$$\vert$ \hyperlink{class_token_aa601738aa08b5ad132d038b0c806fab9}{is\-Opr\-Biner()}\par
+mengembalikan true bila this presedensnya kurang dari T\par
+presedensi standar\par
+ \hypertarget{class_token_a7e04e49806d087cbc8062bafe848e471}{\index{Token@{Token}!Operasikan@{Operasikan}}
+\index{Operasikan@{Operasikan}!Token@{Token}}
+\subsubsection[{Operasikan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} Token\-::\-Operasikan (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token} \&}]{lhs, }
+\item[{const {\bf Token} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{class_token_a7e04e49806d087cbc8062bafe848e471}
+prekondisi\-: \hyperlink{class_token_aa601738aa08b5ad132d038b0c806fab9}{is\-Opr\-Biner()} \&\& lhs.\-is\-Bilangan()\&\& rhs.\-is\-Bilangan()\par
+mengembalikan $<$lhs$>$ $<$this$>$ $<$rhs$>$\par
+ \hypertarget{class_token_ace8d206103c7cd6bda80c9f2beea462b}{\index{Token@{Token}!Operasikan@{Operasikan}}
+\index{Operasikan@{Operasikan}!Token@{Token}}
+\subsubsection[{Operasikan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} Token\-::\-Operasikan (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{class_token_ace8d206103c7cd6bda80c9f2beea462b}
+prekondisi\-: \hyperlink{class_token_a08c5aa25effd9d4b7dd5e2dda0f72058}{is\-Opr\-Uner()} \&\& rhs.\-is\-Bilangan()\par
+mengembalikan $<$this$>$ $<$rhs$>$\par
+ \hypertarget{class_token_aee9cf292baf9525d39d01edf5d9d7797}{\index{Token@{Token}!Set\-Bilangan@{Set\-Bilangan}}
+\index{Set\-Bilangan@{Set\-Bilangan}!Token@{Token}}
+\subsubsection[{Set\-Bilangan}]{\setlength{\rightskip}{0pt plus 5cm}void Token\-::\-Set\-Bilangan (
+\begin{DoxyParamCaption}
+\item[{float}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_token_aee9cf292baf9525d39d01edf5d9d7797}
+
+
+mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f 
+
+\hypertarget{class_token_ab36a4340c125fc641e319c5261ab13f7}{\index{Token@{Token}!Set\-Bilangan@{Set\-Bilangan}}
+\index{Set\-Bilangan@{Set\-Bilangan}!Token@{Token}}
+\subsubsection[{Set\-Bilangan}]{\setlength{\rightskip}{0pt plus 5cm}void Token\-::\-Set\-Bilangan (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_token_ab36a4340c125fc641e319c5261ab13f7}
+
+
+mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi int dan isinya i 
+
+\hypertarget{class_token_afe10550438e63b07c82f1ab9fac4fd98}{\index{Token@{Token}!Set\-Bilangan@{Set\-Bilangan}}
+\index{Set\-Bilangan@{Set\-Bilangan}!Token@{Token}}
+\subsubsection[{Set\-Bilangan}]{\setlength{\rightskip}{0pt plus 5cm}void Token\-::\-Set\-Bilangan (
+\begin{DoxyParamCaption}
+\item[{bool}]{l}
+\end{DoxyParamCaption}
+)}}\label{class_token_afe10550438e63b07c82f1ab9fac4fd98}
+
+
+mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi logika dan isinya l 
+
+\hypertarget{class_token_ae785baf319454717be06d9ffb11ffd4c}{\index{Token@{Token}!Set\-Tkn@{Set\-Tkn}}
+\index{Set\-Tkn@{Set\-Tkn}!Token@{Token}}
+\subsubsection[{Set\-Tkn}]{\setlength{\rightskip}{0pt plus 5cm}void Token\-::\-Set\-Tkn (
+\begin{DoxyParamCaption}
+\item[{{\bf Tipe\-Token}}]{\-\_\-\-Tkn}
+\end{DoxyParamCaption}
+)}}\label{class_token_ae785baf319454717be06d9ffb11ffd4c}
+
+
+mengeset token 
+
+\hypertarget{class_token_aae7b73d9d7cdeaa0a05cc51fbf752e14}{\index{Token@{Token}!To\-Str@{To\-Str}}
+\index{To\-Str@{To\-Str}!Token@{Token}}
+\subsubsection[{To\-Str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Token\-::\-To\-Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_token_aae7b73d9d7cdeaa0a05cc51fbf752e14}
+mengubah ke string (hanya akan digunakan untuk testing. Untuk penggunaan lebih lanjut, gunakan kelas lain) 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{_token_8h}{Token.\-h}\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{_token_8cpp}{Token.\-cpp}\end{DoxyCompactItemize}

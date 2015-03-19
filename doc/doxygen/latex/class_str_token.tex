@@ -1,0 +1,99 @@
+\hypertarget{class_str_token}{\section{Str\-Token Class Reference}
+\label{class_str_token}\index{Str\-Token@{Str\-Token}}
+}
+
+
+{\ttfamily \#include $<$Str\-Token.\-h$>$}
+
+
+
+Inheritance diagram for Str\-Token\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_str_token__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_str_token_a6b1f19d7b05dd697084b743fb1fcf38b}{$\sim$\-Str\-Token} ()
+\item 
+virtual bool \hyperlink{class_str_token_acd92c843b3b092c21d5a038c5d336957}{can\-Convert} (const std\-::string \&s)=0
+\begin{DoxyCompactList}\small\item\em mengembalikan true bila s dapat dikonversi ke token \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{class_str_token_a9562cf6aff9cefa7a223d78573755e8e}{to\-String} (const \hyperlink{class_token}{Token} \&T)=0
+\begin{DoxyCompactList}\small\item\em mengembalikan representasi string dari token T \end{DoxyCompactList}\item 
+virtual \hyperlink{class_token}{Token} \hyperlink{class_str_token_ae3f06fac8d7030218db0d833fae6f773}{to\-Token} (const std\-::string \&s)=0
+\begin{DoxyCompactList}\small\item\em mengembalikan representasi token dari string s \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsibility\par
+Kelas ini merupakan kelas abstrak. Tanggung jawabnya adalah mengkonversi satu jenis representasi token antara objek string dan token.\par
+Hubungan dengan kelas lain\par
+kelas ini diimplementasi oleh kelas \hyperlink{class_arab}{Arab}, \hyperlink{class_logika}{Logika}, \hyperlink{class_romawi}{Romawi}, dan \hyperlink{class_operator}{Operator}.\par
+Gambaran umum method\par
+metodanya adalah mengkonversi dari string ke token dan mengkonversi dari token ke string, serta pengecekan apakah string tertentu dapat dikonversi olehnya\par
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_str_token_a6b1f19d7b05dd697084b743fb1fcf38b}{\index{Str\-Token@{Str\-Token}!$\sim$\-Str\-Token@{$\sim$\-Str\-Token}}
+\index{$\sim$\-Str\-Token@{$\sim$\-Str\-Token}!StrToken@{Str\-Token}}
+\subsubsection[{$\sim$\-Str\-Token}]{\setlength{\rightskip}{0pt plus 5cm}virtual Str\-Token\-::$\sim$\-Str\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_str_token_a6b1f19d7b05dd697084b743fb1fcf38b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_str_token_acd92c843b3b092c21d5a038c5d336957}{\index{Str\-Token@{Str\-Token}!can\-Convert@{can\-Convert}}
+\index{can\-Convert@{can\-Convert}!StrToken@{Str\-Token}}
+\subsubsection[{can\-Convert}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Str\-Token\-::can\-Convert (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_str_token_acd92c843b3b092c21d5a038c5d336957}
+
+
+mengembalikan true bila s dapat dikonversi ke token 
+
+
+
+Implemented in \hyperlink{class_operator_a45e663ede5c21432e883db8504b81f86}{Operator}, \hyperlink{class_arab_ab7f0cbcaf9b248b8545b22ccec07a8cd}{Arab}, \hyperlink{class_logika_acb038237bab7f8557b4da5e75eb0ce61}{Logika}, and \hyperlink{class_romawi_ac99f5ba3d8695bf49d01074bb3afcda3}{Romawi}.
+
+\hypertarget{class_str_token_a9562cf6aff9cefa7a223d78573755e8e}{\index{Str\-Token@{Str\-Token}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!StrToken@{Str\-Token}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string Str\-Token\-::to\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token} \&}]{T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_str_token_a9562cf6aff9cefa7a223d78573755e8e}
+
+
+mengembalikan representasi string dari token T 
+
+
+
+Implemented in \hyperlink{class_operator_a1e41cc6d646b1703c7858282cbcf350f}{Operator}, \hyperlink{class_arab_a097a31788290644f61e76001d7180ec1}{Arab}, \hyperlink{class_logika_accacd24a0d83e98146edd43ab46c789a}{Logika}, and \hyperlink{class_romawi_ace7c4a68a29912199d4984c71d7f858c}{Romawi}.
+
+\hypertarget{class_str_token_ae3f06fac8d7030218db0d833fae6f773}{\index{Str\-Token@{Str\-Token}!to\-Token@{to\-Token}}
+\index{to\-Token@{to\-Token}!StrToken@{Str\-Token}}
+\subsubsection[{to\-Token}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Token} Str\-Token\-::to\-Token (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_str_token_ae3f06fac8d7030218db0d833fae6f773}
+
+
+mengembalikan representasi token dari string s 
+
+
+
+Implemented in \hyperlink{class_operator_a7059095d7977dbdda3068f506b6ed70a}{Operator}, \hyperlink{class_arab_a107f2bde10c4cd4dfd18a44db5739b4c}{Arab}, \hyperlink{class_logika_af52abd9fefcea94bedc313ce61987b3e}{Logika}, and \hyperlink{class_romawi_aacb2db408231ac236b1378f44c501508}{Romawi}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/nim\-\_\-13512501/\-Documents/tubes 1 O\-O\-P/src/token/\hyperlink{_str_token_8h}{Str\-Token.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="StrToken" name="StrToken">
+<area shape="rect" id="node2" href="$class_arab.html" title="Arab" alt="" coords="5,80,53,107"/>
+<area shape="rect" id="node3" href="$class_logika.html" title="Logika" alt="" coords="78,80,137,107"/>
+<area shape="rect" id="node4" href="$class_operator.html" title="Operator" alt="" coords="163,80,235,107"/>
+<area shape="rect" id="node5" href="$class_romawi.html" title="kelas implementasi StrToken dengan aturan representasi bilangan romawi " alt="" coords="259,80,329,107"/>
+</map>
