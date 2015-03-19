@@ -26,20 +26,28 @@ class History{
         ~History();
 
         //!predikat
-        string GetAllBoth(); //! mengeluarkan seluruh history
-        string GetAllCmd(); //! mengeluarkan perintah yang pernah dieksekusi
-        string GetBoth(int n); //! mengeluarkan n buah history terakhir
-        string GetCmd(int n); // !mengeluarkan n buah perintah terakhir
+        
+         //! mengeluarkan seluruh history
+        string GetAllBoth();
+        
+        //! mengeluarkan perintah yang pernah dieksekusi
+        string GetAllCmd(); 
+        
+         //! mengeluarkan n buah history terakhir
+        string GetBoth(int n);
+        
+        // !mengeluarkan n buah perintah terakhir
+        string GetCmd(int n); 
 
-	void Add(string cmd, string res = "");
 	//!menambahkan perintah cmd dan hasil res
 	//!I.S History sudah terdefinisi
 	//!F.S cmd dan res sudah ditambah ke dalam history
+	void Add(string cmd, string res = "");
 	
-	void Delete(int n);
 	//!menghapus n buah perintah terakhir
 	//!I.S History sudah terdefinisi dan berisi >=n History
 	//!F.S History yang sudah dihilangkan n buah history, history mungkin menjadi kosong
+	void Delete(int n);
     
     private:
     Stack<string> MemCmd;
