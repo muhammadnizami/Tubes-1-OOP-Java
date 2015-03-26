@@ -1,3 +1,3 @@
-public interface StrToken.java{
+public interface StrToken{
 
 }
