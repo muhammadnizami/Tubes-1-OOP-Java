@@ -1,3 +1,3 @@
-public class CommandProcessor.java{
+public class CommandProcessor{
 
 }
