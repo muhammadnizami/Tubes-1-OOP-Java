@@ -1,1 +1,0 @@
-../katakr/mesinkata.h

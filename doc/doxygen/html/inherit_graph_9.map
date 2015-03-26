@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_str_token.html" title="StrToken" alt="" coords="5,81,80,108"/>
-<area shape="rect" id="node2" href="$class_arab.html" title="Arab" alt="" coords="139,5,189,32"/>
-<area shape="rect" id="node3" href="$class_logika.html" title="Logika" alt="" coords="134,56,194,83"/>
-<area shape="rect" id="node4" href="$class_operator.html" title="Operator" alt="" coords="128,107,200,133"/>
-<area shape="rect" id="node5" href="$class_romawi.html" title="kelas implementasi StrToken dengan aturan representasi bilangan romawi " alt="" coords="129,157,199,184"/>
-</map>

@@ -1,1 +1,0 @@
-../katakr/mesinkar.h
