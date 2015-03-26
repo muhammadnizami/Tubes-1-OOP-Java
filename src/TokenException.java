@@ -1,1 +1,3 @@
-public class TokenException extends //lanjutin
+public class TokenException extends Exception {
+  
+}
