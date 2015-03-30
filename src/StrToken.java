@@ -1,8 +1,8 @@
 public interface StrToken{
     //!mengembalikan true bila s dapat dikonversi ke token
-   bool canConvert(final String s);
+   bool canConvert(String s);
   //!mengembalikan representasi string dari token T
-   String toString (final Token T);
+   String toString (Token T);
   //!mengembalikan representasi token dari string s
-   Token toToken(final String s); 
+   Token toToken(String s); 
 }
