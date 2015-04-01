@@ -9,6 +9,9 @@ public class mToken{
 		mT.testSetBilangan();
 		mT.testKali();
 		mT.testKurangDari();
+		mT.testKurangDariSamaDengan();
+		mT.testLebihDari();
+		mT.testLebihDariSamaDengan();
 
 
 		Token T1 = new Token();
@@ -626,6 +629,88 @@ public class mToken{
 		assert(T1.Operasikan(T3,T2).getBilanganBool()==true);
 		T2.SetBilangan(2000000000000f);
 		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+	}
+
+	public void testSamaDengan() throws TokenException(){
+		Token T1 = new Token();
+		Token T2 = new Token();
+		Token T3 = new Token();
+		T1.SetTkn(TipeToken.SamaDengan);
+
+		//int dan int
+		T2.SetBilangan(10);
+		T3.SetBilangan(20);
+		assert(T1.Operasikan(T2,T3).getTipeBilangan()==Tipe._bool);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==false);
+		T3.SetBilangan(10);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+
+		//int dan float besar
+		T2.SetBilangan(10);
+		T3.SetBilangan(200000000000f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==false);
+
+		//int dan float biasa
+		T2.SetBilangan(10);
+		T3.SetBilangan(9.5f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==false);
+
+		//float dan float
+		T2.SetBilangan(10.5f);
+		T3.SetBilangan(2000000000000f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==false);
+		T2.SetBilangan(2000000000000f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+
+		T2.SetBilangan(0.5f);
+		T3.SetBilangan(0.5f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		
+	}
+
+	public void testTidakSamaDengan() throws TokenException(){
+		Token T1 = new Token();
+		Token T2 = new Token();
+		Token T3 = new Token();
+		T1.SetTkn(TipeToken.TidakSamaDengan);
+
+		//int dan int
+		T2.SetBilangan(10);
+		T3.SetBilangan(20);
+		assert(T1.Operasikan(T2,T3).getTipeBilangan()==Tipe._bool);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==true);
+		T3.SetBilangan(10);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+
+		//int dan float besar
+		T2.SetBilangan(10);
+		T3.SetBilangan(200000000000f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==true);
+
+		//int dan float biasa
+		T2.SetBilangan(10);
+		T3.SetBilangan(9.5f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==true);
+
+		//float dan float
+		T2.SetBilangan(10.5f);
+		T3.SetBilangan(2000000000000f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		assert(T1.Operasikan(T3,T2).getBilanganBool()==true);
+		T2.SetBilangan(2000000000000f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+
+		T2.SetBilangan(0.5f);
+		T3.SetBilangan(0.5f);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		
 	}
 
 }
