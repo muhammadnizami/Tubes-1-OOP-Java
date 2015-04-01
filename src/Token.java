@@ -252,7 +252,24 @@ public class Token implements Cloneable {
 		case Or:
 			retval.Orkan(rhs);
 			break;
-
+		case KurangDari:
+			retval.KurangDarikan(rhs);
+			break;
+		case KurangDariSamaDengan:
+			retval.KurangDariSamaDengankan(rhs);
+			break;
+		case LebihDari:
+			retval.LebihDarikan(rhs);
+			break;
+		case LebihDariSamaDengan:
+			retval.LebihDariSamaDengankan(rhs);
+			break;
+		case SamaDengan:
+			retval.SamaDenganKan(rhs);
+			break;
+		case TidakSamaDengan:
+			retval.TidakSamaDengankan(rhs);
+			break;
 		}
 
 		return retval;
@@ -429,7 +446,22 @@ public class Token implements Cloneable {
 			Tambahkan(tmp);
 		}
 
+	}
+	private void Kurangkan () throws TokenException {
+		assert (isBilangan());
+		if (getTipeBilangan()==Tipe._int){
+			long tmp = - getBilanganInt();
+			if (tmp>=Integer.MAX_VALUE || tmp<=Integer.MIN_VALUE)
+				SetBilangan((float)tmp);
+			else	SetBilangan((int)tmp);
+		}else if (getTipeBilangan()==Tipe._float)
+			SetBilangan(-getBilanganFloat());
+		else throw new TokenException ("INVALID OPERAND");
 	} 
+	private void Tambahkan() throws TokenException{
+		assert (isBilangan());
+		/*do nothing*/
+	}
 	private void Divkan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -547,6 +579,102 @@ public class Token implements Cloneable {
 		}else{
 			SetBilangan(!getBilanganBool());
 		}
+	}
+
+	private void KurangDarikan(Token dengan){
+		assert(isBilangan() && dengan.isBilangan());
+		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
+			if (getBilanganBool()==false && dengan.getBilanganBool()==true)
+				SetBilangan(true);
+			else
+				SetBilangan(false);
+		}else if (getTipeBilangan()==Tipe._int && dengan.getTipeBilangan()==Tipe._int){
+			SetBilangan(getBilanganInt() < dengan.getBilanganInt());
+		}else{
+			double lhs;
+			double rhs;
+			if (getTipeBilangan()==Tipe._int)
+					lhs = (double) getBilanganInt();
+			else	lhs = (double) getBilanganFloat();
+			if(dengan.getTipeBilangan()==Tipe._int)
+					rhs = (double) dengan.getBilanganInt();
+			else	rhs = (double) dengan.getBilanganFloat();
+			SetBilangan(lhs<rhs);
+		}
+	}
+	private void KurangDariSamaDengankan(Token dengan){
+		assert(isBilangan() && dengan.isBilangan());
+		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
+			if (getBilanganBool()==true && dengan.getBilanganBool()==false)
+				SetBilangan(false);
+			else
+				SetBilangan(true);
+		}else if (getTipeBilangan()==Tipe._int && dengan.getTipeBilangan()==Tipe._int){
+			SetBilangan(getBilanganInt() <= dengan.getBilanganInt());
+		}else{
+			double lhs;
+			double rhs;
+			if (getTipeBilangan()==Tipe._int)
+					lhs = (double) getBilanganInt();
+			else	lhs = (double) getBilanganFloat();
+			if(dengan.getTipeBilangan()==Tipe._int)
+					rhs = (double) dengan.getBilanganInt();
+			else	rhs = (double) dengan.getBilanganFloat();
+			SetBilangan(lhs<=rhs);
+		}
+		
+	}
+	private void LebihDarikan(Token dengan){
+		assert(isBilangan() && dengan.isBilangan());
+		Token tmp = dengan.clone();
+		tmp.KurangDarikan(this);
+		assert(tmp.getTipeBilangan()==Tipe._bool);
+		SetBilangan(tmp.getBilanganBool());
+	}
+	private void LebihDariSamaDengankan(Token dengan){
+		assert(isBilangan() && dengan.isBilangan());
+		Token tmp = dengan.clone();
+		tmp.KurangDariSamaDengankan(this);
+		assert(tmp.getTipeBilangan()==Tipe._bool);
+		SetBilangan(tmp.getBilanganBool());
+	}
+	private void SamaDenganKan(Token dengan){
+		assert(isBilangan() && dengan.isBilangan());
+		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
+			SetBilangan(getBilanganBool() == dengan.getBilanganBool());
+		}else if (getTipeBilangan()==Tipe._int && dengan.getTipeBilangan()==Tipe._int){
+			SetBilangan(getBilanganInt() == dengan.getBilanganInt());
+		}else{
+			double lhs;
+			double rhs;
+			if (getTipeBilangan()==Tipe._int)
+					lhs = (double) getBilanganInt();
+			else	lhs = (double) getBilanganFloat();
+			if(dengan.getTipeBilangan()==Tipe._int)
+					rhs = (double) dengan.getBilanganInt();
+			else	rhs = (double) dengan.getBilanganFloat();
+			SetBilangan(lhs==rhs);
+		}
+		
+	}
+	private void TidakSamaDengankan(Token dengan){
+		assert(isBilangan() && dengan.isBilangan());
+		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
+			SetBilangan(getBilanganBool() != dengan.getBilanganBool());
+		}else if (getTipeBilangan()==Tipe._int && dengan.getTipeBilangan()==Tipe._int){
+			SetBilangan(getBilanganInt() != dengan.getBilanganInt());
+		}else{
+			double lhs;
+			double rhs;
+			if (getTipeBilangan()==Tipe._int)
+					lhs = (double) getBilanganInt();
+			else	lhs = (double) getBilanganFloat();
+			if(dengan.getTipeBilangan()==Tipe._int)
+					rhs = (double) dengan.getBilanganInt();
+			else	rhs = (double) dengan.getBilanganFloat();
+			SetBilangan(lhs!=rhs);
+		}
+		
 	}
 	//!@}
 
