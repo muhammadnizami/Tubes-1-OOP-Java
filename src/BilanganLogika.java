@@ -1,6 +1,6 @@
 
 
-public class Logika implements StrToken{
+public class BilanganLogika implements StrToken{
 	//!mengembalikan true bila s dapat dikonversi ke token
 	public boolean canConvert(/*const*/ String s){ 	
 		return s.equals("true") || s.equals("false");
