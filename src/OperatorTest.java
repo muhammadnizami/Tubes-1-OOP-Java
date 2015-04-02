@@ -34,7 +34,7 @@ public class OperatorTest{
 		TestToString(TipeToken.LebihDari,">");
 		TestToString(TipeToken.LebihDariSamaDengan,">=");
 		TestToString(TipeToken.SamaDengan,"=");
-		TestToString(TipeToken.TidakSamaDengan,"!=");
+		TestToString(TipeToken.TidakSamaDengan,"<>");
 	}
 
 	private void TestToString(TipeToken _tkn, String seharusnyaSamaDengan){
@@ -63,7 +63,7 @@ public class OperatorTest{
 		TestToToken(TipeToken.LebihDari,">");
 		TestToToken(TipeToken.LebihDariSamaDengan,">=");
 		TestToToken(TipeToken.SamaDengan,"=");
-		TestToToken(TipeToken.TidakSamaDengan,"!=");
+		TestToToken(TipeToken.TidakSamaDengan,"<>");
 		
 	}
 
