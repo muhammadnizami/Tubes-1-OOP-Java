@@ -14,6 +14,7 @@ public enum TipeToken{
   Kurungtutup,
   And,
   Or,
+  Xor,
   Not,
   KurangDari,
   KurangDariSamaDengan,

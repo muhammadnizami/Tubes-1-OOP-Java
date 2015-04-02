@@ -104,69 +104,57 @@ public class Token implements Cloneable {
 	public boolean isBilangan() /*const*/{
 		return Tkn==TipeToken.Bilangan;
 	}
+
+	//mengembalikan rank
+	//helper function untuk isSmallerPrecedenceThan()
+	public int getRank(){
+		switch(getTkn()){
+			case Not:
+			return 7;
+			
+			case Kali:
+			case Bagi:
+			case Mod:
+			case Div:
+			return 6;
+			
+			case Tambah:
+			case Kurang:
+			return 5;
+			
+			case KurangDari:
+			case LebihDari:
+			case KurangDariSamaDengan:
+			case LebihDariSamaDengan:
+			return 4;
+						
+			case SamaDengan:
+			case TidakSamaDengan:
+			return 3;
+			
+			case And:
+			return 2;
+			
+			case Xor:
+			return 1;
+			
+			case Or:
+			return 0;
+
+			default:
+			return -999;
+		}
+	}
+
 	//!prekondisi: isOprUner() || isOprBiner()\n
 	//!mengembalikan true bila this presedensnya kurang dari T\n
 	//!presedensi standar\n
 	public boolean isSmallerPrecedenceThan(/*const*/ Token T){
 		assert(isOprUner() || isOprBiner());
-		int this_rank;
-		int T_rank;
-		switch(getTkn()){
-			case Not:
-			this_rank=4;
-			break;
-
-			case Kali:
-			case Bagi:
-			case Mod:
-			case Div:
-			this_rank=3;
-			break;
-
-			case Tambah:
-			case Kurang:
-			this_rank=2;
-			break;
-
-			case And:
-			this_rank=1;
-			break;
-
-			case Or:
-			this_rank=0;
-
-			default:
-				this_rank=-999;
-		}
-		switch(T.getTkn()){
-			case Not:
-			T_rank=4;
-			break;
-
-			case Kali:
-			case Bagi:
-			case Mod:
-			case Div:
-			T_rank=3;
-			break;
-
-			case Tambah:
-			case Kurang:
-			T_rank=2;
-			break;
-
-			case And:
-			T_rank=1;
-			break;
-
-			case Or:
-			T_rank=0;
-
-			default:
-			T_rank=-999;
-		}
-		return this_rank<T_rank;
-	} 	
+		assert(T.isOprUner() || T.isOprBiner());
+		
+		return getRank() < T.getRank();
+	} 
 	///@}
 	
 	//!mengubah ke string 	(hanya akan digunakan untuk testing. Untuk penggunaan lebih lanjut,
@@ -190,9 +178,11 @@ public class Token implements Cloneable {
 		case Mod:
 			return "mod";
 		case And:
-			return "&";
+			return "and";
 		case Or:
-			return "|";
+			return "or";
+		case Xor:
+			return "xor";
 		case Not:
 			return "!";
 		case Bilangan:
@@ -251,6 +241,9 @@ public class Token implements Cloneable {
 			break;
 		case Or:
 			retval.Orkan(rhs);
+			break;
+		case Xor:
+			retval.Xorkan(rhs);
 			break;
 		case KurangDari:
 			retval.KurangDarikan(rhs);
@@ -564,6 +557,29 @@ public class Token implements Cloneable {
 		}
 
 	} 
+	private void Xorkan (Token dengan)throws TokenException{
+		assert(isBilangan() && dengan.isBilangan());
+
+		if (getTipeBilangan()!=Tipe._bool || dengan.getTipeBilangan()!=Tipe._bool){
+			if (getTipeBilangan()==Tipe._int || dengan.getTipeBilangan()==Tipe._int){
+				Token tmp = dengan.clone();
+				try{
+					if (getTipeBilangan()==Tipe._int)IntToBool();
+					if (tmp.getTipeBilangan()==Tipe._int)tmp.IntToBool();
+				}catch (TokenException e){
+					if (e.getMessage()=="THIS TOKEN CANNOT BE CONVERTED TO BOOL"){
+						throw new TokenException("INVALID OPERAND");
+					}
+				}
+				Orkan(tmp);
+			}else{
+				throw new TokenException("INVALID OPERAND");
+			}
+		}else{
+			SetBilangan(getBilanganBool() ^ dengan.getBilanganBool());
+		}
+	}
+
 	private void Notkan ()throws TokenException{
 		assert(isBilangan());
 		if (getTipeBilangan()!=Tipe._bool){

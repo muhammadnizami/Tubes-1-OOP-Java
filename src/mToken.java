@@ -12,71 +12,15 @@ public class mToken{
 		mT.testKurangDariSamaDengan();
 		mT.testLebihDari();
 		mT.testLebihDariSamaDengan();
+		mT.testBagi();
+		mT.testSamaDengan();
+		mT.testTidakSamaDengan();
+		mT.testXor();
 
 
 		Token T1 = new Token();
 		Token T2 = new Token();
 		Token T3 = new Token();
-		//bagi
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(0);
-		T3.SetBilangan(0);
-		System.out.print( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" );
-		try{
-			System.out.println( T1.Operasikan(T2,T3).ToStr());
-		}catch(TokenException e){
-			System.out.println( "error: " + e.getMessage() );
-		}
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
-		T3.SetBilangan(0);
-		System.out.print( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" );
-		try{
-			System.out.println( T1.Operasikan(T2,T3).ToStr());
-		}catch(TokenException e){
-			System.out.println( "error: " + e.getMessage() );
-		}
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(0);
-		T3.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
-		T3.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(2000000000);
-		T3.SetBilangan(1000000000);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(2000000000);
-		T3.SetBilangan(0.05f);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(4e+09f);
-		T3.SetBilangan(1000000000);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(12e+09f);
-		T3.SetBilangan(4e+09f);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(rn.nextInt()%(2000)-1000);
-		T3.SetBilangan(rn.nextInt()%(2000)-1000);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
-
-		T1.SetTkn(TipeToken.Bagi);
-		T2.SetBilangan(Float.POSITIVE_INFINITY);
-		T3.SetBilangan(rn.nextInt()%(2000)-1000);
-		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
 
 		//Div
 		T1.SetTkn(TipeToken.Div);
@@ -443,6 +387,73 @@ public class mToken{
 		assert(T.getTipeBilangan()==Tipe._bool);
 
 	}
+	public void testBagi() throws TokenException{
+		Token T1 = new Token();
+		Token T2 = new Token();
+		Token T3 = new Token();
+		
+		//bagi
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(0);
+		T3.SetBilangan(0);
+		System.out.print( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" );
+		try{
+			System.out.println( T1.Operasikan(T2,T3).ToStr());
+		}catch(TokenException e){
+			System.out.println( "error: " + e.getMessage() );
+		}
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
+		T3.SetBilangan(0);
+		System.out.print( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" );
+		try{
+			System.out.println( T1.Operasikan(T2,T3).ToStr());
+		}catch(TokenException e){
+			System.out.println( "error: " + e.getMessage() );
+		}
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(0);
+		T3.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
+		T3.SetBilangan(rn.nextInt()%(2000000000)-1000000000);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(2000000000);
+		T3.SetBilangan(1000000000);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(2000000000);
+		T3.SetBilangan(0.05f);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(4e+09f);
+		T3.SetBilangan(1000000000);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(12e+09f);
+		T3.SetBilangan(4e+09f);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(rn.nextInt()%(2000)-1000);
+		T3.SetBilangan(rn.nextInt()%(2000)-1000);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+		T1.SetTkn(TipeToken.Bagi);
+		T2.SetBilangan(Float.POSITIVE_INFINITY);
+		T3.SetBilangan(rn.nextInt()%(2000)-1000);
+		System.out.println( T2.ToStr() + T1.ToStr() + T3.ToStr() + "=" + T1.Operasikan(T2,T3).ToStr());
+
+	}
 	public void testKali() throws TokenException{
 		Token T1 = new Token();
 		Token T2 = new Token();
@@ -631,7 +642,7 @@ public class mToken{
 		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
 	}
 
-	public void testSamaDengan() throws TokenException(){
+	public void testSamaDengan() throws TokenException{
 		Token T1 = new Token();
 		Token T2 = new Token();
 		Token T3 = new Token();
@@ -672,7 +683,7 @@ public class mToken{
 		
 	}
 
-	public void testTidakSamaDengan() throws TokenException(){
+	public void testTidakSamaDengan() throws TokenException{
 		Token T1 = new Token();
 		Token T2 = new Token();
 		Token T3 = new Token();
@@ -711,6 +722,30 @@ public class mToken{
 		T3.SetBilangan(0.5f);
 		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
 		
+	}
+
+	public void testXor() throws TokenException{
+		Token T1 = new Token();
+		Token T2 = new Token();
+		Token T3 = new Token();
+
+		T1.SetTkn(TipeToken.Xor);
+		
+		T2.SetBilangan(true);
+		T3.SetBilangan(true);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
+		
+		T2.SetBilangan(true);
+		T3.SetBilangan(false);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		
+		T2.SetBilangan(false);
+		T3.SetBilangan(true);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		
+		T2.SetBilangan(false);
+		T3.SetBilangan(false);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
 	}
 
 }
