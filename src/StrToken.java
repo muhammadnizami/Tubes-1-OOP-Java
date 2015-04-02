@@ -1,10 +1,10 @@
 public interface StrToken{
 	//!mengembalikan true bila s dapat dikonversi ke token
-	boolean canConvert(String s);
+	public boolean canConvert(String s);
 	//!mengembalikan representasi string dari token T
-	String toString (Token T);
+	public String toString (Token T);
 	//!mengembalikan representasi token dari string s
-	Token toToken(String s); 
+	public Token toToken(String s); 
 	//!mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut
-	String getRegEx();
+	public String getRegEx();
 }
