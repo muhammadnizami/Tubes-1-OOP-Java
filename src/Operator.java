@@ -24,7 +24,7 @@ public class Operator implements StrToken{
 		Opr.put(TipeToken.KurangDariSamaDengan,"<=");
 		Opr.put(TipeToken.LebihDariSamaDengan,">=");
 		Opr.put(TipeToken.SamaDengan,"=");
-		Opr.put(TipeToken.TidakSamaDengan,"!=");
+		Opr.put(TipeToken.TidakSamaDengan,"<>");
 		
 		Tkn = new HashMap<String,TipeToken>();
 		for (Map.Entry<TipeToken,String> entry : Opr.entrySet()){
