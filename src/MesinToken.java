@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.regex.Pattern;
 
 
 //!Responsibility\n
@@ -9,7 +10,10 @@ import java.io.*;
 class MesinToken{
 	//! membentuk mesin token dengan pita karakter ST
 	public MesinToken (/* const*/ String ST){
-		kata = ST.split(" +");
+		Operator O = new Operator();
+		String STcpy = ST.replaceAll(Pattern.quote(O.GetString(TipeToken.Kurungbuka))," " + O.GetString(TipeToken.Kurungbuka)+" ");
+		STcpy = STcpy.replaceAll(Pattern.quote(O.GetString(TipeToken.Kurungtutup))," " + O.GetString(TipeToken.Kurungtutup)+" ");
+		kata = STcpy.trim().split(" +");
 		CVT = new Converter();
 	}
 	//! membentuk mesin token dengan pita karakter ST dan converter cvt

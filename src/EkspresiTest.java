@@ -40,5 +40,35 @@ public class EkspresiTest{
 		Ekspresi e = new Ekspresi("* -3 9");
 		assert(e.getVal().equals("-27"));
 	}
+	@Test
+	public void TestInfix1(){
+		Ekspresi e = new Ekspresi("( 1.1 * 2 )");
+		assert(e.getVal().equals("2.2"));
+	}
+	@Test
+	public void TestInfix2(){
+		Ekspresi e = new Ekspresi("( 1.1 > 2 )");
+		assert(e.getVal().equals("false"));
+	}
+	@Test
+	public void TestInfix2KurungNoSpace(){
+		Ekspresi e = new Ekspresi("(1.1 > 2)");
+		assert(e.getVal().equals("false"));
+	}
+	@Test
+	public void TestInfix3(){
+		Ekspresi e = new Ekspresi("( not ( 1.1 > 2 ) )");
+		assert(e.getVal().equals("true"));
+	}
+	@Test
+	public void TestPostfix1(){
+		Ekspresi e = new Ekspresi("-5 3 -");
+		assert(e.getVal().equals("-8"));
+	}
+	@Test
+	public void TestPostfix2(){
+		Ekspresi e = new Ekspresi("not true false and");
+		assert(e.getVal().equals("false"));
+	}
 }
 
