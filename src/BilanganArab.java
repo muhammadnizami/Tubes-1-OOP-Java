@@ -30,7 +30,7 @@ public class BilanganArab implements StrToken{
 				ss = Integer.toString(T.getBilanganInt());
 				break;
 			case _float:
-				ss = Float.toString(T.getBilanganFloat());
+				ss = String.format("%.2f", T.getBilanganFloat());
 				break;
 		}
 

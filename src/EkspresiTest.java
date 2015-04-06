@@ -43,7 +43,7 @@ public class EkspresiTest{
 	@Test
 	public void TestInfix1(){
 		Ekspresi e = new Ekspresi("( 1.1 * 2 )");
-		assert(e.getVal().equals("2.2"));
+		assert(e.getVal().equals("2.20"));
 	}
 	@Test
 	public void TestInfix2(){
@@ -59,6 +59,16 @@ public class EkspresiTest{
 	public void TestInfix3(){
 		Ekspresi e = new Ekspresi("( not ( 1.1 > 2 ) )");
 		assert(e.getVal().equals("true"));
+	}
+	@Test
+	public void TestInfix4(){
+		Ekspresi e = new Ekspresi("( 1.4 * -2 )");
+		assert(e.getVal().equals("-2.80"));
+	}
+	@Test
+	public void TestInfix5(){
+		Ekspresi e = new Ekspresi("( -1.4 * -2 )");
+		assert(e.getVal().equals("2.80"));
 	}
 	@Test
 	public void TestPostfix1(){
