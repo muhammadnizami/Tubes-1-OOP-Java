@@ -41,6 +41,17 @@ public class EkspresiTest{
 		assert(e.getVal().equals("-27"));
 	}
 	@Test
+	public void TestPrefix7(){
+		Ekspresi e = new Ekspresi("< or < 1 2 4 3");
+		assert(e.getVal().equals("true"));
+	}
+	@Test
+	public void TestPrefix8(){
+		Ekspresi e = new Ekspresi("> div - + * 1 2 3 4 5 10");
+		assert(e.getVal().equals("false"));
+	}
+	
+	@Test
 	public void TestInfix1(){
 		Ekspresi e = new Ekspresi("( 1.1 * 2 )");
 		assert(e.getVal().equals("2.20"));
@@ -71,6 +82,16 @@ public class EkspresiTest{
 		assert(e.getVal().equals("2.80"));
 	}
 	@Test
+	public void TestInfix6(){
+		Ekspresi e = new Ekspresi("(1 < 2) or (4 < 3)");
+		assert(e.getVal().equals("true"));
+	}
+	@Test
+	public void TestInfix7(){
+		Ekspresi e = new Ekspresi("((((1 + 2) * 3) mod 4) - 2) ");
+		assert(e.getVal().equals("-1"));
+	}
+	@Test
 	public void TestPostfix1(){
 		Ekspresi e = new Ekspresi("-5 3 -");
 		assert(e.getVal().equals("-8"));
@@ -78,6 +99,16 @@ public class EkspresiTest{
 	@Test
 	public void TestPostfix2(){
 		Ekspresi e = new Ekspresi("not true false and");
+		assert(e.getVal().equals("false"));
+	}
+	@Test
+	public void TestPostfix3(){
+		Ekspresi e = new Ekspresi("1 2 3 4 > or >");
+		assert(e.getVal().equals("false"));
+	}
+	@Test
+	public void TestPostfix4(){
+		Ekspresi e = new Ekspresi("1 2 3 4 5 6 7 - * + * / *");
 		assert(e.getVal().equals("false"));
 	}
 }
