@@ -60,7 +60,7 @@ public class CommandProcessor{
 	
 	//!mengulang n buah perintah
 	String Redo(int n){
-		return "Proses Redo" + n;
+		return "Proses Redo " + n;
 	}
 	
 	//!menampilkan semua perintah
