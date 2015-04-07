@@ -42,7 +42,7 @@ public class EkspresiTest{
 	}
 	@Test
 	public void TestPrefix7(){
-		Ekspresi e = new Ekspresi("< or < 1 2 4 3");
+		Ekspresi e = new Ekspresi("or < 1 2 < 4 3");
 		assert(e.getVal().equals("true"));
 	}
 	@Test
@@ -103,13 +103,13 @@ public class EkspresiTest{
 	}
 	@Test
 	public void TestPostfix3(){
-		Ekspresi e = new Ekspresi("1 2 3 4 > or >");
+		Ekspresi e = new Ekspresi("1 2 > 3 4 > or");
 		assert(e.getVal().equals("false"));
 	}
 	@Test
 	public void TestPostfix4(){
 		Ekspresi e = new Ekspresi("1 2 3 4 5 6 7 + * - / mod <");
-		assert(e.getVal().equals("true"));
+		assert(e.getVal().equals("false"));
 	}
 }
 
