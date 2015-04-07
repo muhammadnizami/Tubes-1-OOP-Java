@@ -317,23 +317,23 @@ public class Token implements Cloneable {
 				}else{
 					float tmp = getBilanganInt();
 					tmp*= dengan.getBilanganFloat();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}
 			}else{
 				if(dengan.getTipeBilangan()==Tipe._int){
 					float tmp = getBilanganFloat();
 					tmp*=dengan.getBilanganInt();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}else{
 					float tmp = getBilanganFloat();
 					tmp*=dengan.getBilanganFloat();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}
 			}
 		
@@ -363,9 +363,9 @@ public class Token implements Cloneable {
 				}else{
 					float tmp = getBilanganFloat();
 					tmp/=dengan.getBilanganInt();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}
 			}else{
 				if(dengan.getBilanganFloat() == 0){
@@ -374,15 +374,15 @@ public class Token implements Cloneable {
 				if(getTipeBilangan()==Tipe._int){
 					double tmp = getBilanganInt();
 					tmp/=dengan.getBilanganFloat();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}else{
 					double tmp = getBilanganFloat();
 					tmp/=dengan.getBilanganFloat();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}
 			}
 		}
@@ -404,23 +404,23 @@ public class Token implements Cloneable {
 				}else{
 					float tmp = dengan.getBilanganFloat();
 					tmp += getBilanganInt();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}
 			}else{
 				if(dengan.getTipeBilangan()==Tipe._int){
 					float tmp=getBilanganFloat();
 					tmp+=dengan.getBilanganInt();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}else{
 					float tmp=getBilanganFloat();
 					tmp+=dengan.getBilanganFloat();
-					if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
+					/*if (tmp<=Integer.MAX_VALUE && tmp>=Integer.MIN_VALUE && tmp==Math.floor(tmp))
 						SetBilangan( (int) tmp);
-					else	SetBilangan( (float) tmp);
+					else	*/SetBilangan( (float) tmp);
 				}
 			}
 		}

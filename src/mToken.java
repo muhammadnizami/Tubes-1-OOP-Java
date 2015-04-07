@@ -720,7 +720,7 @@ public class mToken{
 
 		T2.SetBilangan(0.5f);
 		T3.SetBilangan(0.5f);
-		assert(T1.Operasikan(T2,T3).getBilanganBool()==true);
+		assert(T1.Operasikan(T2,T3).getBilanganBool()==false);
 		
 	}
 
