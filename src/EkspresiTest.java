@@ -108,8 +108,8 @@ public class EkspresiTest{
 	}
 	@Test
 	public void TestPostfix4(){
-		Ekspresi e = new Ekspresi("1 2 3 4 5 6 7 - * + * / *");
-		assert(e.getVal().equals("false"));
+		Ekspresi e = new Ekspresi("1 2 3 4 5 6 7 + * - / mod <");
+		assert(e.getVal().equals("true"));
 	}
 }
 
