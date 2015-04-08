@@ -1,5 +1,13 @@
+/**
+ * Responsibility
+ * Kelas ini merupakan implementasi kelas StrToken dengan konversi sesuai aturan bilangan arab
+ * Hubungan dengan kelas lain
+ * mengimplementasi StrToken
+ * Gambaran umum method
+ * metodanya adalah implementasi metoda StrToken
+*/
 public class BilanganArab implements StrToken{
-	//!mengembalikan true bila s dapat dikonversi ke token
+	/**mengembalikan true bila s dapat dikonversi ke token*/
 	public boolean canConvert(String s){
 		int i=0;
 		int n=s.length();
@@ -15,7 +23,7 @@ public class BilanganArab implements StrToken{
 				return false;
 		return true;
 	}
-	//!mengembalikan representasi string dari token T
+	/**!mengembalikan representasi string dari token T*/
 	public String toString (Token T){
 		assert(T.getTkn()==TipeToken.Bilangan);
 
@@ -36,7 +44,7 @@ public class BilanganArab implements StrToken{
 
 		return ss;
 	}
-	//!mengembalikan representasi token dari string s
+	/**!mengembalikan representasi token dari string s*/
 	public Token toToken(String ss){
 		
 		assert(canConvert(ss));
@@ -54,7 +62,7 @@ public class BilanganArab implements StrToken{
 			tkn.SetBilangan(vf);
 		return tkn;
 	}
-	//!mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut
+	/**!mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut*/
 	public String getRegEx(){
 		return "((\\+|\\-)?[0-9]?\\.?[0-9])";
 	}
