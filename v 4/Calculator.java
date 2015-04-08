@@ -19,8 +19,8 @@ public class Calculator{
 		return exp.getVal();
 	}
 	
-	public String DoCmd(){
-		CommandProcessor cmd = new CommandProcessor();
-		return  cmd.DoCmd(input);
+	public void DoCmd(){
+		CommandProcessorWithPattern cmd = new CommandProcessorWithPattern();
+		cmd.DoCmd(input);
 	}
 }

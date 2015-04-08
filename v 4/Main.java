@@ -17,7 +17,7 @@ public class Main{
 			input = console.readLine();
 			if(!input.equals("Exit")){
 				Calculator Calc = new Calculator(input);
-				console.printf("%s\n", Calc.DoCmd());
+				Calc.DoCmd();
 				
 			}
 		} while (!input.equals("Exit"));
