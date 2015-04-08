@@ -1,12 +1,15 @@
-/* !
-kelas ini bertanggungjawab melaksanakan perintah, baik pengaturan, perhitungan, maupun penyimpanan.\n
-Kelas ini mengandung kelas Histori, File Manager, dan Converter. Dalam beberapa metodanya, kelas ini menggunakan mesintoken dan stack.\n
-Metoda utama yang diakses dari luar kelas adalah DoCmd yaitu melaksanakan sebuah String perintah. Di dalam kelas ini juga ada metoda pembantu untuk DoCmd di antaranya Set, EvaluateExpr, dan sebagainya.\n
+/**
+ * kelas ini bertanggungjawab melaksanakan perintah, baik pengaturan, perhitungan, maupun penyimpanan.
+ * Kelas ini mengandung kelas Histori, File Manager, dan Converter. 
+ * Dalam beberapa metodanya, kelas ini menggunakan mesintoken dan stack.
+ * Metoda utama yang diakses dari luar kelas adalah DoCmd yaitu melaksanakan sebuah String perintah. 
+ * Di dalam kelas ini juga ada metoda pembantu untuk DoCmd di antaranya Set, EvaluateExpr, dan sebagainya.
 */
 public class CommandProcessor{
+	/**Ctor default*/
 	CommandProcessor(){/*!ctor default:*/};
 
-	//!melakukan perintah
+	/**melakukan perintah*/
 	String DoCmd(String s, boolean addToHistory){
 		/*
 		dummy saja
@@ -53,47 +56,47 @@ public class CommandProcessor{
 		return retval;
 	}
 
-	//!melakukan perintah dengan memasukkan ke histori
+	/**melakukan perintah dengan memasukkan ke histori*/
 	String DoCmd(String Cmd){
 		return DoCmd(Cmd,true);
 	}
 	
-	//!mengulang n buah perintah
+	/**mengulang n buah perintah*/
 	String Redo(int n){
 		return "Proses Redo " + n;
 	}
 	
-	//!menampilkan semua perintah
+	/**menampilkan semua perintah*/
 	String MemAll(){
 		return "Proses Show All";
 	}
-	//!menampilkan n buah perintah
+	/**menampilkan n buah perintah*/
 	String Mem(int n){
 		return "Proses ShowMem " + n;
 	}
 
-	//!menghapus n buah perintah
+	/**menghapus n buah perintah*/
 	String Undo(int n){
 		return "Proses Undo " + n;
 	}
 
-	//!menghitung ekspresi, menggunakan kelas ekspresi
+	/**menghitung ekspresi, menggunakan kelas ekspresi*/
 	String ComputeExpr(String s){
 		Ekspresi e = new Ekspresi(s);
 		return e.getVal();
 	}
 
-	//!menyimpan histori
+	/**menyimpan histori*/
 	String Save(){
 		return "Proses Save";
 	}
 
-	//!melakukan setting
+	/**melakukan setting*/
 	String Set(String s){
 		return "Proses Set";
 	}
 
-	//!keluar
+	/**keluar*/
 	String Quit(){
 		return "Proses Quit";
 	}
