@@ -23,7 +23,7 @@ public class BilanganArab implements StrToken{
 				return false;
 		return true;
 	}
-	/**!mengembalikan representasi string dari token T*/
+	/**mengembalikan representasi string dari token T*/
 	public String toString (Token T){
 		assert(T.getTkn()==TipeToken.Bilangan);
 
@@ -44,7 +44,7 @@ public class BilanganArab implements StrToken{
 
 		return ss;
 	}
-	/**!mengembalikan representasi token dari string s*/
+	/**mengembalikan representasi token dari string s*/
 	public Token toToken(String ss){
 		
 		assert(canConvert(ss));
@@ -62,7 +62,7 @@ public class BilanganArab implements StrToken{
 			tkn.SetBilangan(vf);
 		return tkn;
 	}
-	/**!mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut*/
+	/**mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut*/
 	public String getRegEx(){
 		return "((\\+|\\-)?[0-9]?\\.?[0-9])";
 	}
