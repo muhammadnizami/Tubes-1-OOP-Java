@@ -15,12 +15,12 @@ public class BilanganArabTest{
 
 	@Test
 	public void TestSatu(){
-//		assert(A.toString(A.toToken("4000000000")));
-		assert(A.toString(A.toToken("2.05")).equals("2.05"));
-		assert(A.toString(A.toToken("0.464")).equals("0.46"));
-		assert(A.toString(A.toToken("403")).equals("403"));
-//		assert(A.toString(A.toToken("-4000000000")));
-//		assert(A.toString(A.toToken("-2000000")));
-//		assert(A.toString(A.toToken("-0.5")));
+//		assertTrue(A.toString(A.toToken("4000000000")));
+		assertTrue(A.toString(A.toToken("2.05")).equals("2.05"));
+		assertTrue(A.toString(A.toToken("0.464")).equals("0.46"));
+		assertTrue(A.toString(A.toToken("403")).equals("403"));
+//		assertTrue(A.toString(A.toToken("-4000000000")));
+//		assertTrue(A.toString(A.toToken("-2000000")));
+//		assertTrue(A.toString(A.toToken("-0.5")));
 	}
 }

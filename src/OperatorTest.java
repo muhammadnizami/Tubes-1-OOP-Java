@@ -41,7 +41,7 @@ public class OperatorTest{
 		Operator O = new Operator();
 		Token T = new Token();
 		T.SetTkn(_tkn);
-		assert(O.toString(T).equals(seharusnyaSamaDengan));
+		assertTrue(O.toString(T).equals(seharusnyaSamaDengan));
 	}
 
 	@Test
@@ -69,7 +69,7 @@ public class OperatorTest{
 
 	private void TestToToken(TipeToken seharusnyaTipenya, String str ){
 		Operator O = new Operator();
-		assert(O.toToken(str).getTkn()==seharusnyaTipenya);
+		assertTrue(O.toToken(str).getTkn()==seharusnyaTipenya);
 	}
 
 	@Test
@@ -80,7 +80,7 @@ public class OperatorTest{
 		Matcher matcher = pattern.matcher(str);
 		while(matcher.find()){
 
-			assert(O.canConvert(matcher.group(0)));
+			assertTrue(O.canConvert(matcher.group(0)));
 		}
 	}
 

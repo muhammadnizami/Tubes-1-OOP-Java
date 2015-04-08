@@ -36,20 +36,20 @@ public class testConverter{
 	private void TestToString(TipeToken _tkn, String seharusnyaSamaDengan){
 		Token T = new Token();
 		T.SetTkn(_tkn);
-		assert(C.toString(T).equals(seharusnyaSamaDengan));
+		assertTrue(C.toString(T).equals(seharusnyaSamaDengan));
 	}
 
 	@Test
 	public void TestToStringsBilangan(){
 		Token T = new Token();
 		T.SetBilangan(123);
-		assert(C.toString(T).equals("123"));
+		assertTrue(C.toString(T).equals("123"));
 		T.SetBilangan(-123);
-		assert(C.toString(T).equals("-123"));
+		assertTrue(C.toString(T).equals("-123"));
 		T.SetBilangan(true);
-		assert(C.toString(T).equals("true"));
+		assertTrue(C.toString(T).equals("true"));
 		T.SetBilangan(false);
-		assert(C.toString(T).equals("false"));
+		assertTrue(C.toString(T).equals("false"));
 	}
 
 	@Test
@@ -82,7 +82,7 @@ public class testConverter{
 	}
 
 	private void TestToToken(TipeToken seharusnyaTipenya, String str ){
-		assert(C.toToken(str).getTkn()==seharusnyaTipenya);
+		assertTrue(C.toToken(str).getTkn()==seharusnyaTipenya);
 	}
 
 }

@@ -15,26 +15,26 @@ public class BilanganLogikaTest{
 
 	@Test
 	public void testTrueToToken(){
-		assert(L.toToken("true").getBilanganBool()==true);
+		assertTrue(L.toToken("true").getBilanganBool()==true);
 	}
 
 	@Test
 	public void testFalseToToken(){
-		assert(L.toToken("false").getBilanganBool()==false);
+		assertTrue(L.toToken("false").getBilanganBool()==false);
 	}
 
 	@Test
 	public void testFalseToString(){
 		Token T = new Token();
 		T.SetBilangan(false);
-		assert(L.toString(T)=="false");
+		assertTrue(L.toString(T)=="false");
 	}
 
 	@Test
 	public void testTrueToString(){
 		Token T = new Token();
 		T.SetBilangan(true);
-		assert(L.toString(T)=="true");
+		assertTrue(L.toString(T)=="true");
 	}
 
 	@Test
@@ -43,7 +43,7 @@ public class BilanganLogikaTest{
 		Pattern pattern = Pattern.compile(L.getRegEx());
 		Matcher matcher = pattern.matcher(str);
 		while(matcher.find()){
-			assert(L.canConvert(matcher.group(0)));
+			assertTrue(L.canConvert(matcher.group(0)));
 		}		
 	}
 }

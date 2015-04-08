@@ -15,30 +15,30 @@ public class mesinTokenTest{
 		String test = "( 3   ( 3 + < true  -3  div mod )";
 		MesinToken MT = new MesinToken(test);
 		MT.START();
-		assert(MT.GetCToken().getTkn()==TipeToken.Kurungbuka);
+		assertTrue(MT.GetCToken().getTkn()==TipeToken.Kurungbuka);
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()==TipeToken.Bilangan);
-		assert(MT.GetCToken().getBilanganInt()==3);
+		assertTrue(MT.GetCToken().getTkn()==TipeToken.Bilangan);
+		assertTrue(MT.GetCToken().getBilanganInt()==3);
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()==TipeToken.Kurungbuka);
+		assertTrue(MT.GetCToken().getTkn()==TipeToken.Kurungbuka);
 		MT.ADV();
-		assert(MT.GetCToken().getBilanganInt()==3);
+		assertTrue(MT.GetCToken().getBilanganInt()==3);
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()==TipeToken.Tambah);
+		assertTrue(MT.GetCToken().getTkn()==TipeToken.Tambah);
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()==TipeToken.KurangDari);
+		assertTrue(MT.GetCToken().getTkn()==TipeToken.KurangDari);
 		MT.ADV();
-		assert(MT.GetCToken().getBilanganBool()==true);
+		assertTrue(MT.GetCToken().getBilanganBool()==true);
 		MT.ADV();
-		assert(MT.GetCToken().getBilanganInt()== -3 );
+		assertTrue(MT.GetCToken().getBilanganInt()== -3 );
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()== TipeToken.Div );
+		assertTrue(MT.GetCToken().getTkn()== TipeToken.Div );
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()== TipeToken.Mod );
+		assertTrue(MT.GetCToken().getTkn()== TipeToken.Mod );
 		MT.ADV();
-		assert(MT.GetCToken().getTkn()== TipeToken.Kurungtutup );
+		assertTrue(MT.GetCToken().getTkn()== TipeToken.Kurungtutup );
 		MT.ADV();
-		assert(MT.getEnd());
+		assertTrue(MT.getEnd());
 		
 	}
 
