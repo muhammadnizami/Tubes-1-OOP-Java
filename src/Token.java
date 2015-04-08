@@ -1,11 +1,11 @@
-	/*!
-		Kelas token bertanggung jawab sebagai objek yang dapat dimengerti oleh evaluator.
-		Kelas token bertanggung jawab atas jenis-jenis bilangan dan operator serta perilakunya
-		perilaku operator yaitu presedensi serta bagaimana operator tersebut mengoperasikan operand
+	/**
+	*	Kelas token bertanggung jawab sebagai objek yang dapat dimengerti oleh evaluator.
+	*	Kelas token bertanggung jawab atas jenis-jenis bilangan dan operator serta perilakunya
+	*	perilaku operator yaitu presedensi serta bagaimana operator tersebut mengoperasikan operand
 	*/
 
 public class Token implements Cloneable {
-	//!ctor
+	/**ctor*/
 	public Token(){
 		Tkn=TipeToken.Bilangan;
 		Val = new BilanganT();
@@ -15,7 +15,7 @@ public class Token implements Cloneable {
 		TipeBilangan = Tipe._int;
 	}
 		
-	//!clone
+	/**clone*/
 	public Token clone(){
 		Token retval = new Token();
 		retval.Tkn=this.Tkn;
@@ -26,87 +26,116 @@ public class Token implements Cloneable {
 		return retval;
 	}
 	
-	//!@name getter
-	//!tidak mengubah status token
-	//!@{
-	
-	//!mengembalikan tipe token tersebut
+	/**getter*/
+	/**tidak mengubah status token*/
+	/**mengembalikan tipe token tersebut*/
 	public TipeToken getTkn() /*const*/{
 		return Tkn;
 	} 
-	//!prekondisi: getTkn()==TipeToken.Bilangan
+	/**getter*/
+	/**tidak mengubah status token*/
+	/**prekondisi: getTkn()==TipeToken.Bilangan*/
 	public Tipe getTipeBilangan() /*const*/{
 		assert(getTkn()==TipeToken.Bilangan);
 		return TipeBilangan;
 	} 
-	//!prekondisi: getTipeBilangan()==Tipe._int
+	/**getter*/
+	/**tidak mengubah status token*/
+	/**prekondisi: getTipeBilangan()==Tipe._int*/
 	public int getBilanganInt() /*const*/{
 		assert(getTipeBilangan()==Tipe._int);
 		return Val.I;
 	} 
-	//!prekondisi: getTipeBilangan()==Tipe._float
+	/**getter*/
+	/**tidak mengubah status token*/
+	/**prekondisi: getTipeBilangan()==Tipe._float*/
 	public float getBilanganFloat() /*const*/{
 		assert(getTipeBilangan()==Tipe._float);
 		return Val.F;
 	} 
-	//!prekondisi: getTipeBilangan()==Tipe._bool
+	/**getter*/
+	/**tidak mengubah status token*/
+	/**prekondisi: getTipeBilangan()==Tipe._bool*/
 	public boolean getBilanganBool() /*const*/{
 		assert(getTipeBilangan()==Tipe._bool);
 		return Val.B;
 	} 
-	//!@}
+
 	
-	//!@name setter
-	//!@mengubah status token. Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya
-	//!@{
-	
-	//!mengeset token
+	/** setter
+	*mengubah status token. 
+	* Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya
+	*/
+	/**mengeset token*/
 	public void SetTkn(TipeToken _Tkn){
 		Tkn=_Tkn;
 	}
-	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f
+	/** setter
+	*mengubah status token. 
+	* Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya
+	*/
+	/**mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi float dan isinya f*/
 	public void SetBilangan(float f){
 		Tkn=TipeToken.Bilangan;
 		TipeBilangan = Tipe._float;
 		Val.F = f;
 	}
-	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi int dan isinya i
+	/** setter
+	*mengubah status token. 
+	* Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya
+	*/
+	/**mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi int dan isinya i*/
 	public void SetBilangan(int i){
 		Tkn=TipeToken.Bilangan;
 		TipeBilangan = Tipe._int;
 		Val.I = i;
 	}
-	//!mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi logika dan isinya l
+	/** setter
+	*mengubah status token. 
+	* Akan digunakan oleh yang membangun dan mengubah token, seperti converter dan sebagainya
+	*/
+	/**mengeset bilangan sekaligus tipe token menjadi bilangan dan tipe bilangan menjadi logika dan isinya l*/
 	public void SetBilangan(boolean l){
 		Tkn=TipeToken.Bilangan;
 		TipeBilangan = Tipe._bool;
 		Val.B = l;
 	}
-	//@}
 	
-	//!@name predikat
-	//!boolean, true false. tidak mengubah status token
-	//!@{
-	
-	//!mengembalikan true bila ( atau )
+	/** predikat
+	*boolean, true false. tidak mengubah status token
+	*/
+	/**mengembalikan true bila ( atau )*/
 	public boolean isPunctuator() /*const*/{
 		return Tkn==TipeToken.Kurungbuka || Tkn==TipeToken.Kurungtutup;
 	}
-	//!mengembalikan true bila ia operator uner
+
+	/** predikat
+	*boolean, true false. tidak mengubah status token
+	*/
+	/**mengembalikan true bila ia operator uner*/
 	public boolean isOprUner() /*const*/{
 		return Tkn==TipeToken.Not;
 	}
-	//!mengembalikan true bila ia operator uner
+	
+	/** predikat
+	*boolean, true false. tidak mengubah status token
+	*/
+	/**mengembalikan true bila ia operator uner
+	*/
 	public boolean isOprBiner() /*const*/{
 		return Tkn!=TipeToken.Not && Tkn!=TipeToken.Bilangan && !isPunctuator();
 	}
-	//!mengembalikan true bila token merupakan bilangan
+	/** predikat
+	*boolean, true false. tidak mengubah status token
+	*/
+	/**mengembalikan true bila token merupakan bilangan*/
 	public boolean isBilangan() /*const*/{
 		return Tkn==TipeToken.Bilangan;
 	}
 
-	//mengembalikan rank
-	//helper function untuk isSmallerPrecedenceThan()
+	/**mengembalikan rank
+	* helper function untuk isSmallerPrecedenceThan()
+	*/
 	public int getRank(){
 		switch(getTkn()){
 			case Not:
@@ -146,19 +175,24 @@ public class Token implements Cloneable {
 		}
 	}
 
-	//!prekondisi: isOprUner() || isOprBiner()\n
-	//!mengembalikan true bila this presedensnya kurang dari T\n
-	//!presedensi standar\n
+	/** predikat
+	*boolean, true false. tidak mengubah status token
+	*/
+	/**prekondisi: isOprUner() || isOprBiner()
+	 * mengembalikan true bila this presedensnya kurang dari T
+	 * presedensi standar
+	 */
 	public boolean isSmallerPrecedenceThan(/*const*/ Token T){
 		assert(isOprUner() || isOprBiner());
 		assert(T.isOprUner() || T.isOprBiner());
 		
 		return getRank() < T.getRank();
 	} 
-	///@}
+
 	
-	//!mengubah ke string 	(hanya akan digunakan untuk testing. Untuk penggunaan lebih lanjut,
-	//!			gunakan kelas lain)
+	/**mengubah ke string 	(hanya akan digunakan untuk testing. 
+	* Untuk penggunaan lebih lanjut, gunakan kelas lain)
+	*/
 	public String ToStr(){
 		switch(getTkn()){
 		case Kali:
@@ -204,13 +238,12 @@ public class Token implements Cloneable {
 		return null;
 	}
 	
-	//!@name method lain
-	//!untuk digunakan oleh kalkulator atau evaluator\n
-	//!saat dioperasikan, tipe bilangan dapat berubah\n
-	///@{
-	
-	//!prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()\n
-	//!mengembalikan <lhs> <this> <rhs>\n
+	/**method lain
+	untuk digunakan oleh kalkulator atau evaluator
+	saat dioperasikan, tipe bilangan dapat berubah*/
+	/**prekondisi: isOprBiner() && lhs.isBilangan()&& rhs.isBilangan()
+	*mengembalikan <lhs> <this> <rhs>
+	*/
 	public Token Operasikan(/*const*/ Token lhs, /*const*/ Token rhs) /*const*/throws TokenException{
 		if (!isOprBiner())
 			throw new TokenException("INVALID OPERATOR");
@@ -269,9 +302,11 @@ public class Token implements Cloneable {
 
 	}
  
-	
-	//!prekondisi: isOprUner() && rhs.isBilangan()\n
-	//!mengembalikan <this> <rhs>\n
+	/**method lain
+	untuk digunakan oleh kalkulator atau evaluator
+	saat dioperasikan, tipe bilangan dapat berubah*/
+	/**prekondisi: isOprUner() && rhs.isBilangan()
+	mengembalikan <this> <rhs>*/
 	public Token Operasikan(/*const*/ Token rhs) /*const*/throws TokenException{
 		if (!isOprUner())
 			throw new TokenException("INVALID OPERATOR");
@@ -286,8 +321,7 @@ public class Token implements Cloneable {
 		}
 		return retval;
 	} 	
-	
-	///@}
+
 		
 
 	private class BilanganT{
@@ -299,7 +333,7 @@ public class Token implements Cloneable {
 	private BilanganT Val;
 	private Tipe TipeBilangan;
 
-	//!method pembantu@{
+	/**method pembantu*/
 	private void Kalikan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -340,6 +374,8 @@ public class Token implements Cloneable {
 		}
 	
 	} 
+	/**method pembantu*/
+	
 	private void Bagikan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -388,6 +424,7 @@ public class Token implements Cloneable {
 		}
 
 	} 
+	/**method pembantu*/
 	private void Tambahkan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -426,6 +463,7 @@ public class Token implements Cloneable {
 		}
 
 	} 
+	/**method pembantu*/
 	private void Kurangkan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -440,6 +478,7 @@ public class Token implements Cloneable {
 		}
 
 	}
+	/**method pembantu*/
 	private void Kurangkan () throws TokenException {
 		assert (isBilangan());
 		if (getTipeBilangan()==Tipe._int){
@@ -451,10 +490,12 @@ public class Token implements Cloneable {
 			SetBilangan(-getBilanganFloat());
 		else throw new TokenException ("INVALID OPERAND");
 	} 
+	/**method pembantu*/
 	private void Tambahkan() throws TokenException{
 		assert (isBilangan());
 		/*do nothing*/
 	}
+	/**method pembantu*/
 	private void Divkan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -483,6 +524,7 @@ public class Token implements Cloneable {
 			}
 		}
 	}
+	/**method pembantu*/
 	private void Modkan(/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -511,6 +553,7 @@ public class Token implements Cloneable {
 			}
 		}
 	}
+	/**method pembantu*/
 	private void Andkan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -534,6 +577,7 @@ public class Token implements Cloneable {
 		}
 
 	} 
+	/**method pembantu*/
 	private void Orkan (/*const*/ Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -557,6 +601,7 @@ public class Token implements Cloneable {
 		}
 
 	} 
+	/**method pembantu*/
 	private void Xorkan (Token dengan)throws TokenException{
 		assert(isBilangan() && dengan.isBilangan());
 
@@ -580,6 +625,7 @@ public class Token implements Cloneable {
 		}
 	}
 
+	/**method pembantu*/
 	private void Notkan ()throws TokenException{
 		assert(isBilangan());
 		if (getTipeBilangan()!=Tipe._bool){
@@ -597,6 +643,7 @@ public class Token implements Cloneable {
 		}
 	}
 
+	/**method pembantu*/
 	private void KurangDarikan(Token dengan){
 		assert(isBilangan() && dengan.isBilangan());
 		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
@@ -618,6 +665,7 @@ public class Token implements Cloneable {
 			SetBilangan(lhs<rhs);
 		}
 	}
+	/**method pembantu*/
 	private void KurangDariSamaDengankan(Token dengan){
 		assert(isBilangan() && dengan.isBilangan());
 		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
@@ -640,6 +688,7 @@ public class Token implements Cloneable {
 		}
 		
 	}
+	/**method pembantu*/
 	private void LebihDarikan(Token dengan){
 		assert(isBilangan() && dengan.isBilangan());
 		Token tmp = dengan.clone();
@@ -647,6 +696,7 @@ public class Token implements Cloneable {
 		assert(tmp.getTipeBilangan()==Tipe._bool);
 		SetBilangan(tmp.getBilanganBool());
 	}
+	/**method pembantu*/
 	private void LebihDariSamaDengankan(Token dengan){
 		assert(isBilangan() && dengan.isBilangan());
 		Token tmp = dengan.clone();
@@ -654,6 +704,7 @@ public class Token implements Cloneable {
 		assert(tmp.getTipeBilangan()==Tipe._bool);
 		SetBilangan(tmp.getBilanganBool());
 	}
+	/**method pembantu*/
 	private void SamaDenganKan(Token dengan){
 		assert(isBilangan() && dengan.isBilangan());
 		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
@@ -673,6 +724,7 @@ public class Token implements Cloneable {
 		}
 		
 	}
+	/**method pembantu*/
 	private void TidakSamaDengankan(Token dengan){
 		assert(isBilangan() && dengan.isBilangan());
 		if (getTipeBilangan()==Tipe._bool && dengan.getTipeBilangan()==Tipe._bool){
@@ -692,9 +744,9 @@ public class Token implements Cloneable {
 		}
 		
 	}
-	//!@}
 
-	//!method pembantu dari method pembantu
+
+	/**method pembantu dari method pembantu*/
 	private void IntToBool()throws TokenException{
 		if (getTkn()==TipeToken.Bilangan)
 			if (getTipeBilangan()==Tipe._int)
