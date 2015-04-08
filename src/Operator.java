@@ -4,7 +4,13 @@ import java.util.Set;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+/** kelas implementasi
+* Kelas ini merupakan implementasi kelas StrToken dengan konversi sesuai aturan penulisan operator.
+*/
 public class Operator implements StrToken{
+	private EnumMap<TipeToken, String> Opr;
+	private Map<String,TipeToken> Tkn;
+	
 	public Operator(){
 		Opr = new EnumMap<TipeToken,String>(TipeToken.class);
 		Opr.put(TipeToken.Kali,"*");
@@ -33,23 +39,24 @@ public class Operator implements StrToken{
 		
 	}
 	
-	//!mengembalikan Opr.put(_tkn]
-	//!prekondisi: 0<=_tkn<TIPETOKEN_COUNT
+	/**mengembalikan Opr.put(_tkn]
+	 * prekondisi: 0<=_tkn<TIPETOKEN_COUNT
+	*/
 	public String GetString(TipeToken _tkn){
 		return Opr.get(_tkn);
 	}
 
-	//!mengembalikan true bila s dapat dikonversi ke token
+	/**mengembalikan true bila s dapat dikonversi ke token */
 	public boolean canConvert(/*const*/ String s){
 		return Opr.containsValue(s);
 	}
 	
-	//!mengembalikan representasi string dari token T
+	/**mengembalikan representasi string dari token T*/
 	public String toString (/*const*/ Token T){
 		return Opr.get(T.getTkn());
 	}
 	
-	//!mengembalikan representasi token dari string s
+	/**mengembalikan representasi token dari string s*/
 	public Token toToken(/*const*/ String s){
 		assert(canConvert(s));
 		Token retval = new Token();
@@ -57,7 +64,7 @@ public class Operator implements StrToken{
 		return retval;
 	}
 
-	//!mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut
+	/**mengembalikan ekspresi reguler dari kelas turunan StrToken tersebut*/
 	public String getRegEx(){
 		String regex = new String();
 		for (Map.Entry<String,TipeToken> entry : Tkn.entrySet()){
@@ -67,6 +74,4 @@ public class Operator implements StrToken{
 		return regex;
 	}
 
-	private EnumMap<TipeToken, String> Opr;
-	private Map<String,TipeToken> Tkn;
 }
