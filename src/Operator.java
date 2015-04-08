@@ -40,7 +40,6 @@ public class Operator implements StrToken{
 	}
 	
 	/**mengembalikan Opr.put(_tkn]
-	 * prekondisi: 0<=_tkn<TIPETOKEN_COUNT
 	*/
 	public String GetString(TipeToken _tkn){
 		return Opr.get(_tkn);
