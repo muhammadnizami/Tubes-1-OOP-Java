@@ -3,12 +3,12 @@ public class Ekspresi{
 	private String expr;
 	private String val;
 
-
+	/**Ctor*/
 	public Ekspresi(){
 		expr="0";
 		val="0";
 	}
-	
+	/**Ctor dengan parameter*/
 	public Ekspresi(String _expr){
 		expr=_expr;
 		calculate();
@@ -18,7 +18,7 @@ public class Ekspresi{
 		expr = _expr;
 		calculate();
 	}
-
+	/**Menghitung ekspresi, menggunakan mesin token dan stack*/
 	public void calculate(){
 
 		try{
@@ -69,6 +69,7 @@ public class Ekspresi{
 			return ModeEkspresi.prefix;
 		}
 	}
+	/**Menghitung ekspresi prefix*/
 	private void calculatePrefix() throws TokenException, ConverterException{
 		/*algoritma: postfix dibalik (dari kanan)*/
 		Stack<Token> st0 = new Stack<Token>();
@@ -114,7 +115,7 @@ public class Ekspresi{
 		}
 				
 	}
-
+	/**Menghitung ekspresi Infix*/
 	private void calculateInfix() throws TokenException, ConverterException{
 		/*
 		kamus:
@@ -221,6 +222,7 @@ public class Ekspresi{
 
 	}
 	final boolean prefixUnerTetapDiDepan = true;
+	/**Menghitung ekspresi postfix*/
 	private void calculatePostfix() throws TokenException, ConverterException{
 		/*algoritma dari Wikipedia:
 		The algorithm for evaluating any postfix expression is fairly straightforward:
@@ -281,11 +283,11 @@ public class Ekspresi{
 			{val = "SYNTAX ERROR"; return;}
 
 	}
-
+	/**Getter*/
 	public String getExpr(){
 		return expr;
 	}
-
+	/**Getter*/
 	public String getVal(){
 		return val;
 	}
